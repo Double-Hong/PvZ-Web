@@ -1,0 +1,63 @@
+ManifestFileVersion: 0
+CRC: 788809129
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 4eddb64dea62527187f0f041046234c3
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 2a30e872735eb6904a94095b92a25bd4
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 82
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 44d85476d0b9a0c46bfdc56a36d6548f, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a5270558ed1d093468d7621f8da35370, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6ca8e5e77dab0fb4889dbb6ae4bbeb15, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 586139cddd521cc408906007c88fc317, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: ba0ff08c37f021646aa30e09016de676, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 6fc01b31b9d9c894d98f44d0391c9bcf, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: f089b67c7c1cb764d926c31877db8d37, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/Prefabs/Plant/CherryBomb.prefab
+- Assets/Resources/Prefabs/Plant/DoublePeaShooter.prefab
+- Assets/Resources/Prefabs/Plant/Sunflower.prefab
+- Assets/Resources/Texture/Peashooter/Peashooter_7.png
+- Assets/Resources/Prefabs/Plant/PeaShooter.prefab
+- Assets/Resources/Prefabs/Plant/WallNut.prefab
+- Assets/Resources/Prefabs/Plant/PotatoMine.prefab
+- Assets/Resources/Prefabs/Plant/SnowPeaShooter.prefab
+Dependencies:
+- D:/_Unity Project/PvZ - Web/AssetBundles/WebGL/prefab/someobject

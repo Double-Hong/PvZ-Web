@@ -1,0 +1,11 @@
+植物id	名称	图的名字	灰色图的名字	冷却时间	开始冷却时间	所需阳光
+植物唯一id	植物在Unity显示的名称，与对应枚举相同	对应图的名称	灰色图的名字	植物的一般冷却时间	开局时植物的冷却时间	所需阳光
+int	string	string	string	int	int	int
+id	name	imageName	greyName	cooldown	startCooldown	sunNeed
+0	Sunflower	cardSunflower	cardSunflowerGrey	5	0	50
+1	PeaShooter	cardPeashooter	cardPeashooterGrey	5	5	100
+2	CherryBomb	cardCherrybomb	cardCherrybombGrey	20	10	150
+3	DoublePeaShooter	cardRepeaterpea	cardRepeaterpeaGrey	10	10	200
+4	PotatoMine	cardPotatomine	cardPotatomineGrey	15	5	25
+5	SnowPeaShooter	cardSnowpea	cardSnowpeaGrey	20	20	175
+6	WallNut	cardWallnut	cardWallnutGrey	20	10	50

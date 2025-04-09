@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c19288189be4542b493e09c4138f5b6, type: 3}
+  m_Name: Level1
+  m_EditorClassIdentifier: 
+  waves:
+  - spawnTime: 4
+    zombies:
+    - zombieType: 0
+      count: 1
+  index: 1
+  positions:
+  - {fileID: 4711687024809421721, guid: 3dd61e3b29b414c4f9b92d397d86ea99, type: 3}
+  - {fileID: 3866205315979571875, guid: 8e6b8438f75c0274ca69f2d8ac9d9a95, type: 3}
+  - {fileID: 3719104010284821307, guid: 9240695bb924c3f4a8f746bb5041085d, type: 3}
+  - {fileID: 1302634359594071700, guid: 94f2dd60430bd064ca48f20efc1a9b14, type: 3}
+  - {fileID: 91489065653375577, guid: c27dcad7f05913e45b6e960fd7c92220, type: 3}
+  winAwardType: 11
+  winAward:
+    plantId: 0
+    message: 
+    gold: 10

@@ -1,0 +1,19 @@
+ManifestFileVersion: 0
+CRC: 3335033427
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: atla
+      Dependencies: {}
+    Info_1:
+      Name: prefab/plant
+      Dependencies:
+        Dependency_0: prefab/someobject
+    Info_2:
+      Name: prefab/someobject
+      Dependencies: {}
+    Info_3:
+      Name: prefab/ui
+      Dependencies:
+        Dependency_0: atla
+        Dependency_1: prefab/plant

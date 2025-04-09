@@ -1,0 +1,24 @@
+ManifestFileVersion: 0
+CRC: 95045752
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 33dc3adbef55af4983098f31dcae60a5
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: c21d61fe394c58399df3c6fb5c7c99b3
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/Atlas/Common/Common.png
+- Assets/Resources/Atlas/PlantImage/PlantImage.png
+- Assets/Resources/Atlas/Common/Almanac_PlantCard.png
+- Assets/Resources/Atlas/PreparationUi/SeedChooser_ImitaterAddOn.png
+- Assets/Resources/Atlas/Common/Almanac_GroundDay.jpg
+- Assets/Resources/Atlas/PreparationUi/SeedChooser_Background.png
+Dependencies: []

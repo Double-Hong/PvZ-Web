@@ -1,0 +1,14 @@
+version: 2
+tpsheetFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites.tpsheet
+- Assets/Resources/Atlas/Common/Common.tpsheet
+- Assets/Resources/Atlas/PlantImage/PlantImage.tpsheet
+textureFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites.png
+- Assets/Resources/Atlas/Common/Common.png
+- Assets/Resources/Atlas/PlantImage/PlantImage.png
+normalmapFileNames:
+- Assets/codeandweb.com/Example/SpriteSheet/sprites_n.png
+- 
+- 
+enableDebugOutput: 0
