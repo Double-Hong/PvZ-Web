@@ -1,0 +1,23 @@
+﻿/.idea/
+/.vs/PvZ/v16/
+/AssetBundles/WebGL/
+/Library/
+/Logs/
+/minigameExport/
+/obj/Debug/
+/Temp/
+/TextToolDatas/
+/UserSettings/
+/Assembly-CSharp.csproj
+/Assembly-CSharp-Editor.csproj
+/Assembly-CSharp-firstpass.csproj
+/PvZ.sln
+/PvZ.sln.DotSettings.user
+/PVZ.zip
+/PvZ - Web.sln
+/PvZ - Web.sln.DotSettings.user
+/ScreenFitter.csproj
+/Unity.AssetBundleBrowser.Editor.csproj
+/Unity.AssetBundleBrowser.Editor.Tests.csproj
+/Wx.csproj
+/WxEditor.csproj
