@@ -34,7 +34,7 @@ public class ConfigImporter : AssetPostprocessor
 
 
         // 生成对应的目标路径，替换 Resources/Config -> Scripts/Configs
-        string relativePath = path.Replace("Assets/Config/", "");
+        string relativePath = path.Replace("Assets/Resources/Config/", "");
         string saveDir = Path.Combine("Assets/Scripts/Configs", Path.GetDirectoryName(relativePath));
         if (!Directory.Exists(saveDir))
         {

@@ -19,7 +19,7 @@ namespace Configs
 
         private static readonly Dictionary<Type, string> ConfigPaths = new Dictionary<Type, string>
         {
-            {typeof(PlantInfoConfig),"Config/Plant/AllPlantInfo"}
+            {typeof(PlantInfoConfig),"Config/Plant/PlantInfo"}
         };
     }
 }

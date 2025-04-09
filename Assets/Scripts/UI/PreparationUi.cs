@@ -54,7 +54,6 @@ public class PreparationUi : MonoBehaviour
     private void ConfigInit()
     {
         //TODO:读取配置的这一部分，都应该封装到他自己的类中
-        mPlantInfo = ConfigManager.LoadConfigResources("Config/Plant/AllPlantInfo.txt");
         List<int> playerOwnedPlant = MainGameManager.GetInstance().GetCurrentPlayerData().ownedPlantsId;
         HashSet<int> setPlayerPlant = playerOwnedPlant.ToHashSet();
         Sprite[] sprites = Resources.LoadAll<Sprite>("Atlas/PlantImage/PlantImage");
