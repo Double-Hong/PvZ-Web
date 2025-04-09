@@ -15,6 +15,9 @@ public class Bullet : MonoBehaviour
 
     public BulletType bulletType;
 
+    /// <summary>
+    /// 命中目标
+    /// </summary>
     private GameObject mAttackTarget;
 
     /// <summary>
