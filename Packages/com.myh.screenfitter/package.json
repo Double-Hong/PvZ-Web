@@ -1,0 +1,11 @@
+{
+  "name": "com.myh.screenfitter",
+  "displayName": "Screen Fitter",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "description":"闵乙洪的屏幕适配",
+  "keywords": ["Screen", "Fitter"],
+  "category": "",
+  "dependencies": {
+  }
+}

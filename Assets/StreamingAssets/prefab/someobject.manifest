@@ -1,0 +1,56 @@
+ManifestFileVersion: 0
+CRC: 1585470565
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: e730aa27820475f1ab8fd01f9689f770
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 97f2b54e50790ac1f8b0b5ae4cc99cc9
+HashAppended: 0
+ClassTypes:
+- Class: 1
+  Script: {instanceID: 0}
+- Class: 4
+  Script: {instanceID: 0}
+- Class: 21
+  Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 48
+  Script: {instanceID: 0}
+- Class: 50
+  Script: {instanceID: 0}
+- Class: 58
+  Script: {instanceID: 0}
+- Class: 60
+  Script: {instanceID: 0}
+- Class: 61
+  Script: {instanceID: 0}
+- Class: 74
+  Script: {instanceID: 0}
+- Class: 91
+  Script: {instanceID: 0}
+- Class: 95
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 3e9f059e1adbb0049a02793cefcb3b00, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a5270558ed1d093468d7621f8da35370, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: e9b9b82179f88d34d904f3d3c4f11a7f, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 212
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/Prefabs/SomeObject/PeaBullet.prefab
+- Assets/Resources/Texture/SnowPeaBullet.png
+- Assets/Resources/Prefabs/SomeObject/Background1.prefab
+- Assets/Resources/Prefabs/SomeObject/SnowPeaBullet.prefab
+- Assets/Resources/Prefabs/SomeObject/Sun.prefab
+- Assets/Resources/Texture/PeaBullet.png
+Dependencies: []
