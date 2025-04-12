@@ -21,6 +21,10 @@ public class ConfigImporter : AssetPostprocessor
         }
     }
 
+    /// <summary>
+    /// 创建Config类
+    /// </summary>
+    /// <param name="path"></param>
     private static void CreateConfig(string path)
     {
         string fileName = Path.GetFileNameWithoutExtension(path); // 类名来源于文件名
