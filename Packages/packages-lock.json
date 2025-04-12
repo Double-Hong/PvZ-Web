@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.myh.commontools": {
+      "version": "file:com.myh.commontools",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.myh.screenfitter": {
       "version": "file:com.myh.screenfitter",
       "depth": 0,

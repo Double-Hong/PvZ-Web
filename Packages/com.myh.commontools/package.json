@@ -1,0 +1,11 @@
+{
+  "name": "com.myh.commontools",
+  "displayName": "Common Tools",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "description":"myh的项目通用工具",
+  "keywords": ["项目通用"],
+  "category": "",
+  "dependencies": {
+  }
+}
