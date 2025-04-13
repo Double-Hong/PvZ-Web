@@ -1,0 +1,11 @@
+{
+  "name": "com.myh.configmanager",
+  "displayName": "Config Manager",
+  "version": "0.1.0",
+  "unity": "2021.3",
+  "description":"myh的配置管理器",
+  "keywords": ["配置","管理器"],
+  "category": "",
+  "dependencies": {
+  }
+}

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
+using Configs;
 using DG.Tweening;
 using GameData;
 using UnityEngine;
@@ -77,6 +78,7 @@ public class MainGameManager : MonoBehaviour
     {
         GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
         Instantiate(prefab, GameCanvas.transform);
+        ConfigManager.SetPathProvider(new ConfigPathProvider());
         EffectAudioManager.InitSingleton();
     }
 

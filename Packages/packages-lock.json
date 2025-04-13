@@ -6,6 +6,12 @@
       "source": "embedded",
       "dependencies": {}
     },
+    "com.myh.configmanager": {
+      "version": "file:com.myh.configmanager",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.myh.screenfitter": {
       "version": "file:com.myh.screenfitter",
       "depth": 0,
