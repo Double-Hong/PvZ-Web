@@ -1,5 +1,4 @@
-﻿using Config;
-
+﻿
 public class PlantInfoConfig : BaseConfig
 {
     /// <summary>

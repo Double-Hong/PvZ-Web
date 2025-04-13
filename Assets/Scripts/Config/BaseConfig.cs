@@ -1,7 +1,0 @@
-﻿namespace Config
-{
-    public class BaseConfig
-    {
-        public string configId;
-    }
-}
