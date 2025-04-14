@@ -29,7 +29,7 @@ namespace myh
         {
             if (INSTANCE != null)
             {
-                throw new Exception("单例反复初始化：" + typeof(T).Name);
+                throw new Exception("单例反复初始化:" + typeof(T).Name);
             }
 
             GameObject obj = new GameObject(typeof(T).Name);
@@ -53,17 +53,17 @@ namespace myh
         }
 
         /// <summary>
-        /// 单例重置方法，子类需要实现，内容写在这里
+        /// 单例重置方法，子类需要实现
         /// </summary>
         protected abstract void ResetData();
 
         /// <summary>
-        /// 单例重置化方法，子类需要实现，内容写在这里
+        /// 单例重置化方法，子类需要实现
         /// </summary>
         protected abstract void Init();
 
         /// <summary>
-        /// 单例销毁方法，子类需要实现，内容写在这里
+        /// 单例销毁方法，子类需要实现
         /// </summary>
         protected abstract void Destroy();
 
@@ -128,7 +128,7 @@ namespace myh
         {
             if (mLIST.Contains(t))
             {
-                throw new Exception("单例反复初始化：" + nameof(t));
+                throw new Exception("单例反复初始化:" + nameof(t));
             }
 
             mLIST.Add(t);
