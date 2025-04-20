@@ -21,7 +21,7 @@ namespace Configs
                 return path;
             }
     
-            Debug.LogError($"{type}未定义配置文件路径,请在ConfigPath中配置");
+            Debug.LogError($"{type}未定义配置文件路径,请在ConfigPathProvider中配置");
             return string.Empty;
         }
     }

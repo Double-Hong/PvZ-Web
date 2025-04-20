@@ -110,7 +110,8 @@ public class UserPanel : MonoBehaviour
 
     private void GameOverBtnClick()
     {
-        MainGameManager.GetInstance().GameFailNormal();
+        // MainGameManager.GetInstance().GameFailNormal();
+        UIManager.Show("TestUi");
         Destroy(gameObject);
     }
 

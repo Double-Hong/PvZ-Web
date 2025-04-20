@@ -626,6 +626,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1850346782}
+  - component: {fileID: 1850346788}
   - component: {fileID: 1850346783}
   - component: {fileID: 1850346785}
   - component: {fileID: 1850346787}
@@ -823,6 +824,18 @@ MonoBehaviour:
   selectedCardList: []
   virtualCamera: {fileID: 1480554992}
   CardMaterial: {fileID: 2100000, guid: d74b8d16f85e4b6429ed2f0e2f666234, type: 2}
+--- !u!114 &1850346788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1850346780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ce0d84b0117454bbd170f3d15c65e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1949325111
 GameObject:
   m_ObjectHideFlags: 0

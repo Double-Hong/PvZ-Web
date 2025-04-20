@@ -79,6 +79,7 @@ public class MainGameManager : MonoBehaviour
         GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
         Instantiate(prefab, GameCanvas.transform);
         ConfigManager.SetPathProvider(new ConfigPathProvider());
+        UIManager.Init(new UiPathProvider(),rootRect);
         EffectAudioManager.InitSingleton();
     }
 
