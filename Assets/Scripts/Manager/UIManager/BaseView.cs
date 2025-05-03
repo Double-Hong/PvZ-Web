@@ -9,18 +9,18 @@ public class BaseView : MonoBehaviour
         Debug.Log("Start");
     }
 
-    public virtual void Show()
+    public virtual void Show(params object[] args)
     {
         Debug.Log($"Show");
-        Init();
+        Init(args);
     }
 
-    protected virtual void Init()
+    protected virtual void Init(params object[] args)
     {
         Debug.Log($"Init {UiName}");
     }
 
-    protected virtual void Close()
+    public virtual void Close()
     {
         Debug.Log($"Close {UiName}");
     }

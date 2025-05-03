@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -16,20 +15,31 @@ public class TestUi : BaseView
     {
         btn.onClick.AddListener((() =>
         {
-            num.text = TestModel.inst.num.ToString();
+            // UIManager.Close("TestUi");
+            num.transform.position = new Vector3(num.transform.position.x - 1, num.transform.position.y);
         }));
     }
 
-    protected override void Init()
+    private void Update()
+    {
+        // Debug.Log($"local ---> {btn.transform.localPosition}");
+        // Debug.Log($"position ---> {btn.transform.position}");
+        // RectTransform rect = btn.GetComponent<RectTransform>();
+        // Debug.Log($"rect local ---> {rect.localPosition}");
+        // Debug.Log($"rect position ---> {rect.position}");
+    }
+
+    protected override void Init(params object[] args)
     {
         base.Init();
+        TestController.inst.SetModel(new TestModel());
         Debug.Log(TestModel.inst.num.ToString());
         num.text = TestModel.inst.num.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Close()
     {
-        
+        base.Close();
+        TestController.inst.DestroyModel();
     }
 }

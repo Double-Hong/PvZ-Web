@@ -56,12 +56,6 @@ public class PreparationUi : MonoBehaviour
         //TODO:读取配置的这一部分，都应该封装到他自己的类中
         List<int> playerOwnedPlant = MainGameManager.GetInstance().GetCurrentPlayerData().ownedPlantsId;
         HashSet<int> setPlayerPlant = playerOwnedPlant.ToHashSet();
-        Sprite[] sprites = Resources.LoadAll<Sprite>("Atlas/PlantImage/PlantImage");
-        Dictionary<string, Sprite> spritesDict = new Dictionary<string, Sprite>();
-        foreach (Sprite sprite in sprites)
-        {
-            spritesDict.Add(sprite.name, sprite);
-        }
 
         for (int i = 0; i < setPlayerPlant.Count; i++)
         {
@@ -78,17 +72,19 @@ public class PreparationUi : MonoBehaviour
                 GameObject selectedCard = Instantiate(card, CardList.transform).gameObject;
                 card.bg.color = Color.black;
                 card.elementNode.color = Color.black;
+                EffectAudioManager.Instance.PlayEffect("Audio/CardClick");
                 selectedCard.GetComponent<Card>().InitCard(() =>
                 {
                     card.bg.color = Color.white;
                     card.elementNode.color = Color.white;
+                    EffectAudioManager.Instance.PlayEffect("Audio/CardClick");
                     mCards.Remove(prefab);
                     RefreshUi();
                     Destroy(selectedCard);
                 }, null,config);
                 mCards.Add(prefab);
                 RefreshUi();
-            }, spritesDict[config.imageName],config);
+            }, PlantModel.Inst.GetSpriteByName(config.imageName),config);
             
         }
     }

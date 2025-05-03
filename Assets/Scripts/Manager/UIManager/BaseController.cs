@@ -9,7 +9,7 @@ public class BaseController
         Debug.Log("Init Controller");
     }
 
-    protected void SetModel(BaseModel model)
+    public void SetModel(BaseModel model)
     {
         this.model = model;
     }
@@ -17,5 +17,10 @@ public class BaseController
     public T GetModel<T>() where T : BaseModel
     {
         return model as T;
+    }
+
+    public void DestroyModel()
+    {
+        model = null;
     }
 }

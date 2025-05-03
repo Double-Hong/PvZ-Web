@@ -11,6 +11,8 @@ public class GameMainUi : MonoBehaviour
 
     public Button gatherSunBtn;
 
+    public Button shovelBtn;
+
     public GameObject cardList;
     
     public TextMeshProUGUI sunNumber;
@@ -25,6 +27,7 @@ public class GameMainUi : MonoBehaviour
         
         pauseBtn.onClick.AddListener(MainGameManager.GetInstance().OnPauseButtonClick);
         gatherSunBtn.onClick.AddListener(SunManager.GetInstance().GetAllSun);
+        shovelBtn.onClick.AddListener(OnShovelBtnClick);
         List<GameObject> cards = MainGameManager.GetInstance().selectedCardList;
 
         foreach (GameObject card in cards)
@@ -33,11 +36,19 @@ public class GameMainUi : MonoBehaviour
             card.transform.SetParent(cardList.transform);
             card.GetComponent<Card>().PreparationTurnCooling();
         }
+        shovelBtn.transform.parent.SetSiblingIndex(cards.Count + 1);
     }
 
     private void OnSunNumberChanged()
     {
         sunNumber.text = SunManager.GetInstance().mSunshineNumber.ToString();
+    }
+
+    private void OnShovelBtnClick()
+    {
+        MainGameManager.GetInstance().ChangeShovelState(true);
+        UIManager.Show("ShovelStateUi");
+        EffectAudioManager.Instance.PlayEffect("Audio/Shovel");
     }
     
 }

@@ -102,7 +102,7 @@ public class UserPanel : MonoBehaviour
             Debug.Log("已完成全部主线关卡");
             return;
         }
-
+        EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
         MainGameManager.GetInstance().OnLevelEnter();
 
         Destroy(gameObject);
@@ -111,8 +111,9 @@ public class UserPanel : MonoBehaviour
     private void GameOverBtnClick()
     {
         // MainGameManager.GetInstance().GameFailNormal();
+        EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
         UIManager.Show("TestUi");
-        Destroy(gameObject);
+        // Destroy(gameObject);
     }
 
     private void QuitBtnClick()

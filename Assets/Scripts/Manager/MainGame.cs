@@ -8,6 +8,7 @@ public class MainGame : MonoBehaviour
     void Start()
     {
         InitModule();
+        InitMainModel();
     }
 
     private void InitModule()
@@ -21,5 +22,10 @@ public class MainGame : MonoBehaviour
                 ControllerTool.InitController(type);
             }
         }
+    }
+
+    private void InitMainModel()
+    {
+        PlantModel.Inst.Init();
     }
 }

@@ -2,9 +2,16 @@
 
 public class TestController:BaseController
 {
+    public static TestController inst
+    {
+        get
+        {
+            return ControllerTool.GetController<TestController>();
+        }
+    }
+
     public TestController()
     {
-        Debug.Log(111);
-        SetModel(new TestModel());
+        
     }
 }

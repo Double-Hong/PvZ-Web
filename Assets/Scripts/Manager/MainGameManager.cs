@@ -46,6 +46,11 @@ public class MainGameManager : MonoBehaviour
 
     private bool mGameState = true;
 
+    /// <summary>
+    /// 是否拿起铁铲
+    /// </summary>
+    private bool mShovelState = false;
+
     public bool gameState
     {
         get => mGameState;
@@ -115,9 +120,16 @@ public class MainGameManager : MonoBehaviour
         // toggleTxt = GUILayout.Toggle(toggleTxt, "A Toggle text");
     }
 
-    public void SetCamera()
+    public void SetCameraLow()
     {
-        GameCanvas.worldCamera = MyCamera;
+        GameCanvas.sortingOrder = 1;
+        GameCanvas.sortingLayerName = "Game";
+    }
+
+    public void SetCameraHigh()
+    {
+        GameCanvas.sortingOrder = 999;
+        GameCanvas.sortingLayerName = "Foreground";
     }
 
     public void OnPauseButtonClick()
@@ -154,7 +166,7 @@ public class MainGameManager : MonoBehaviour
             mPauseDialog.SetActive(true);
         }
 
-        GameCanvas.GetComponent<Canvas>().worldCamera = null;
+        SetCameraHigh();
     }
 
     private int GetMainLevelNum()
@@ -173,7 +185,7 @@ public class MainGameManager : MonoBehaviour
         SetZombieManagerState(false);
         SetSunManagerState(false);
         Time.timeScale = 1;
-        SetCamera();
+        SetCameraLow();
         GameObject background1 = Resources.Load<GameObject>("Prefabs/SomeObject/Background1");
         Instantiate(background1, root.transform);
         PreparationMoveCamera(() =>
@@ -199,10 +211,10 @@ public class MainGameManager : MonoBehaviour
     {
         GameBeginEvent?.Invoke();
         selectedCardList = cards;
-        foreach (GameObject card in cards)
-        {
-            Debug.Log(card.name);
-        }
+        // foreach (GameObject card in cards)
+        // {
+        //     Debug.Log(card.name);
+        // }
     }
 
     private void SetZombieManagerState(bool state)
@@ -217,7 +229,7 @@ public class MainGameManager : MonoBehaviour
 
     private void InitGameBeginEvents()
     {
-        GameBeginEvent += () => GameCanvas.renderMode = RenderMode.ScreenSpaceCamera;
+        GameBeginEvent += () => GameCanvas.sortingOrder = 1;
         GameBeginEvent += () =>
         {
             GameObject mainGameUi = Resources.Load<GameObject>("Prefabs/UI/GameMainUi");
@@ -245,6 +257,7 @@ public class MainGameManager : MonoBehaviour
     private void SetMainMusic(string path)
     {
         mCurrentClip = Resources.Load<AudioClip>(path);
+        audioSource.time = 0;
         audioSource.clip = mCurrentClip;
         audioSource.Play();
     }
@@ -341,20 +354,18 @@ public class MainGameManager : MonoBehaviour
         {
             if ((levelData.winAwardType & WinAwardType.Plant) == WinAwardType.Plant)
             {
-                Sprite[] sprites = Resources.LoadAll<Sprite>("Atlas/PlantImage/PlantImage");
-                Dictionary<string, Sprite> spritesDict = new Dictionary<string, Sprite>();
-                foreach (Sprite sprite in sprites)
-                {
-                    spritesDict.Add(sprite.name, sprite);
-                }
+
 
                 int index = int.Parse(levelData.winAward.plantId);
                 PlantInfoConfig config = ConfigManager.GetConfigById<PlantInfoConfig>(index);
+                
                 GameObject cardTemplate = Resources.Load<GameObject>("Prefabs/UI/CardTemplate");
-                GameCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
-                GameObject prefab = Instantiate(cardTemplate,lastZombieTransform,Quaternion.identity, MainGameUi.transform);
-                GameCanvas.renderMode = RenderMode.ScreenSpaceCamera;
-
+                GameObject prefab = Instantiate(cardTemplate,MainGameUi.transform);
+                Vector2 vector2 = new Vector2(lastZombieTransform.x, lastZombieTransform.y);
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(rootRect, vector2, Camera.main,
+                    out Vector2 vector);
+                prefab.GetComponent<RectTransform>().anchoredPosition = vector;
+                
                 prefab.SetActive(true);
                 // prefab.transform.SetPositionAndRotation(new Vector3(prefab.transform.position.x,prefab.transform.position.y,0),Quaternion.identity);
                 Card card = prefab.GetComponent<Card>();
@@ -363,7 +374,7 @@ public class MainGameManager : MonoBehaviour
                     Debug.Log("显示获取界面");
                     Time.timeScale = 0;
                     ShowGainAwardUi(index);
-                },spritesDict[config.imageName],config);
+                },PlantModel.Inst.GetSpriteByName(config.imageName),config);
                 Debug.Log("Plant");
                 mCurrentPlayerData.ownedPlantsId.Add(int.Parse(levelData.winAward.plantId));
             }
@@ -391,7 +402,7 @@ public class MainGameManager : MonoBehaviour
         mCurrentPlayerData.MainLevel++;
         PlayerData.WritePlayerData(mCurrentPlayerData);
         Debug.Log("Win!");
-        GameCanvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        SetCameraHigh();
     }
 
     private void ShowGainAwardUi(int plantId)
@@ -405,6 +416,28 @@ public class MainGameManager : MonoBehaviour
         //     OnLevelEnter();
         // }
     }
+
+    #region 铁铲
+
+    /// <summary>
+    /// 是否拿起铁铲
+    /// </summary>
+    /// <returns></returns>
+    public bool IsTakeShovel()
+    {
+        return mShovelState;
+    }
+
+    /// <summary>
+    /// 改变铁铲状态
+    /// </summary>
+    /// <param name="state"></param>
+    public void ChangeShovelState(bool state)
+    {
+        mShovelState = state;
+    }
+
+    #endregion
     
     
     

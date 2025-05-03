@@ -15,9 +15,15 @@ public class EffectAudioManager : MonoSingleton<EffectAudioManager>
     // 最大同时音效播放数（避免无限增长）
     private const int MaxSources = 10;
 
+    /// <summary>
+    /// 音效音量
+    /// </summary>
+    private float volume = 0.75f;
+
     protected override void Init()
     {
         var newSource = gameObject.AddComponent<AudioSource>();
+        newSource.volume = volume;
         mAudioSources.Add(newSource);
     }
 
@@ -25,7 +31,7 @@ public class EffectAudioManager : MonoSingleton<EffectAudioManager>
     {
         Debug.Log("EffectAudioManager 重置");
         // 可清空缓存或重置音效状态
-        // audioClipCache.Clear();
+        mAudioClipCache.Clear();
     }
 
     protected override void Destroy()
@@ -75,11 +81,34 @@ public class EffectAudioManager : MonoSingleton<EffectAudioManager>
         if (mAudioSources.Count < MaxSources)
         {
             var newSource = gameObject.AddComponent<AudioSource>();
+            newSource.volume = volume;
             mAudioSources.Add(newSource);
             return newSource;
         }
 
         // 全在播，返回第一个（可能会打断正在播放的）
         return mAudioSources[0];
+    }
+
+    /// <summary>
+    /// 获得音量
+    /// </summary>
+    /// <returns></returns>
+    public float GetVolume()
+    {
+        return volume;
+    }
+
+    /// <summary>
+    /// 设置音量
+    /// </summary>
+    /// <param name="volumeValue"></param>
+    public void SetVolume(float volumeValue)
+    {
+        volume = volumeValue;
+        foreach (var source in mAudioSources)
+        {
+            source.volume = volumeValue;
+        }
     }
 }

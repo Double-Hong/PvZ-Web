@@ -1,4 +1,6 @@
+using myh;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum PlantState
 {
@@ -17,21 +19,20 @@ public enum PlantType
     CherryBomb,
 }
 
-public class Plant : MonoBehaviour
+public class Plant : MonoBehaviour, IPointerClickHandler
 {
     protected PlantState mPlantState = PlantState.Disable;
 
     public PlantType plantType;
-    
+
     public int row;
-    
+
     public int column;
 
     /// <summary>
     /// 血量
     /// </summary>
-    [SerializeField]
-    protected int mHealth;
+    [SerializeField] protected int mHealth;
 
     protected int OriginHealth;
 
@@ -62,12 +63,10 @@ public class Plant : MonoBehaviour
 
     private void DisableUpdate()
     {
-        
     }
 
     protected virtual void EnableUpdate()
     {
-        
     }
 
     protected void TurnToDisable()
@@ -78,7 +77,10 @@ public class Plant : MonoBehaviour
 
     public void TurnToEnable()
     {
-        mPlantState = PlantState.Enable;
+        DelayCall.After(0.5f,(() =>
+        {
+            mPlantState = PlantState.Enable;
+        }));
         mAnimator.speed = 1;
         GetComponent<SpriteRenderer>().sortingLayerName = "Game";
     }
@@ -91,5 +93,17 @@ public class Plant : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        Debug.Log($"row:{row},column:{column},{gameObject.name}");
+        if (MainGameManager.GetInstance().IsTakeShovel() && mPlantState != PlantState.Disable)
+        {
+            EffectAudioManager.Instance.PlayEffect("Audio/RemovePlant");
+            MainGameManager.GetInstance().ChangeShovelState(false);
+            UIManager.Hide("ShovelStateUi");
+            Destroy(gameObject);
+        }
+        
+    }
 }

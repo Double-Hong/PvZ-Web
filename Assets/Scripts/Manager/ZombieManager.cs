@@ -110,7 +110,7 @@ public class ZombieManager : MonoBehaviour
             lines[i].name = "ZombieLine" + (i + 1);
             SortingGroup sortingGroup = lines[i].GetComponent<SortingGroup>();
             sortingGroup.sortingLayerName = "Game";
-            sortingGroup.sortingOrder = lines.Length - i;
+            sortingGroup.sortingOrder = lines.Length - i + 1;
         }
     }
 

@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -217,11 +215,16 @@ public class Card : MonoBehaviour
         }
         else
         {
+            EffectAudioManager.Instance.PlayEffect("Audio/TakePlant");
             if (SunManager.GetInstance().mSunshineNumber >= sunNeed)
             {
                 HandManager.GetInstance().AddPlant(plantType, sunNeed, ReadyTurnCooling);
             }
             //TODO:提示阳光不足
+            else
+            {
+                UIManager.Show("CommonTipsUi","阳光不足");
+            }
         }
     }
 
