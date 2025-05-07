@@ -133,7 +133,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 437
+        y: 181
         width: 99
         height: 74
       alignment: 9
@@ -154,7 +154,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1
-        y: 364
+        y: 108
         width: 65
         height: 71
       alignment: 9
@@ -175,7 +175,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 175
-        y: 364
+        y: 108
         width: 67
         height: 74
       alignment: 9
@@ -196,7 +196,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 102
-        y: 458
+        y: 202
         width: 75
         height: 53
       alignment: 9
@@ -217,7 +217,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 179
-        y: 440
+        y: 184
         width: 71
         height: 71
       alignment: 9
@@ -238,7 +238,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 102
-        y: 385
+        y: 129
         width: 71
         height: 71
       alignment: 0
@@ -258,8 +258,8 @@ TextureImporter:
       name: cardWallnut
       rect:
         serializedVersion: 2
-        x: 68
-        y: 310
+        x: 1
+        y: 33
         width: 63
         height: 73
       alignment: 9
@@ -271,153 +271,6 @@ TextureImporter:
       bones: []
       spriteID: 9639ac09c4bdef546b5162fdc9671588
       internalID: -311110581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardCherrybombGrey
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 292
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 48e01d7bdd4ea5e43b117109a599781a
-      internalID: 1572369012
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardPeashooterGrey
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 167
-        width: 50
-        height: 69
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8cef49726df26045b9d7c28862b9247
-      internalID: 339798969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardPotatomineGrey
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 292
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2f909fcdef203b4dbf417a2833f0897
-      internalID: 194145378
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardRepeaterpeaGrey
-      rect:
-        serializedVersion: 2
-        x: 185
-        y: 292
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6a54784b34e99c438c7d19b6c5fe2b0
-      internalID: 824573822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardSnowpeaGrey
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 238
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8d09f6f4d2d76fb4a9e6e87ac9182b3f
-      internalID: 1195142227
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardSunflowerGrey
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 220
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9d12cfc1e431247438a540308fc874f4
-      internalID: -1524303068
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: cardWallnutGrey
-      rect:
-        serializedVersion: 2
-        x: 105
-        y: 220
-        width: 50
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdd6931a91851f341a917d5f8f90e16e
-      internalID: -1393963608
       vertices: []
       indices: 
       edges: []
@@ -434,19 +287,12 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       cardCherrybomb: 679650907
-      cardCherrybombGrey: 1572369012
       cardPeashooter: -1636975342
-      cardPeashooterGrey: 339798969
       cardPotatomine: -2000182485
-      cardPotatomineGrey: 194145378
       cardRepeaterpea: 1812650667
-      cardRepeaterpeaGrey: 824573822
       cardSnowpea: 2127305738
-      cardSnowpeaGrey: 1195142227
       cardSunflower: -1503397614
-      cardSunflowerGrey: -1524303068
       cardWallnut: -311110581
-      cardWallnutGrey: -1393963608
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

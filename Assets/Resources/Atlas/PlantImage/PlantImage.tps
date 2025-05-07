@@ -200,17 +200,11 @@
         <key>individualSpriteSettings</key>
         <map type="IndividualSpriteSettingsMap">
             <key type="filename">..Sprite/cardCherrybomb.png</key>
-            <key type="filename">..Sprite/cardCherrybombGrey.png</key>
             <key type="filename">..Sprite/cardPotatomine.png</key>
-            <key type="filename">..Sprite/cardPotatomineGrey.png</key>
             <key type="filename">..Sprite/cardRepeaterpea.png</key>
-            <key type="filename">..Sprite/cardRepeaterpeaGrey.png</key>
             <key type="filename">..Sprite/cardSnowpea.png</key>
-            <key type="filename">..Sprite/cardSnowpeaGrey.png</key>
             <key type="filename">..Sprite/cardSunflower.png</key>
-            <key type="filename">..Sprite/cardSunflowerGrey.png</key>
             <key type="filename">..Sprite/cardWallnut.png</key>
-            <key type="filename">..Sprite/cardWallnutGrey.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
@@ -224,7 +218,6 @@
                 <false/>
             </struct>
             <key type="filename">..Sprite/cardPeashooter.png</key>
-            <key type="filename">..Sprite/cardPeashooterGrey.png</key>
             <struct type="IndividualSpriteSettings">
                 <key>pivotPoint</key>
                 <point_f>0.5,0.5</point_f>
