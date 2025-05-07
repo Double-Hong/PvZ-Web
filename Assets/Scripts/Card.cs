@@ -213,16 +213,20 @@ public class Card : MonoBehaviour
         {
             cardClick?.Invoke();
         }
+        else if (CardState == CardStateEnum.Cooling)
+        {
+            EffectAudioManager.Instance.PlayEffect("Audio/Error");
+            UIManager.Show("CommonTipsUi","冷却中");
+        }
         else
         {
-            EffectAudioManager.Instance.PlayEffect("Audio/TakePlant");
             if (SunManager.GetInstance().mSunshineNumber >= sunNeed)
             {
                 HandManager.GetInstance().AddPlant(plantType, sunNeed, ReadyTurnCooling);
             }
-            //TODO:提示阳光不足
             else
             {
+                EffectAudioManager.Instance.PlayEffect("Audio/Error");
                 UIManager.Show("CommonTipsUi","阳光不足");
             }
         }

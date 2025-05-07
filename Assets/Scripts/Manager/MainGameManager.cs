@@ -435,6 +435,15 @@ public class MainGameManager : MonoBehaviour
     public void ChangeShovelState(bool state)
     {
         mShovelState = state;
+        if (state)
+        {
+            SetCameraHigh();
+        }
+        else
+        {
+            SetCameraLow();
+        }
+        
     }
 
     #endregion

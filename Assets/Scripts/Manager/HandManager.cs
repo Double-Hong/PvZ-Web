@@ -72,7 +72,7 @@ public class HandManager : MonoBehaviour
             Debug.Log("手上已经有植物了");
             return;
         }
-
+        EffectAudioManager.Instance.PlayEffect("Audio/TakePlant");
         Plant plantPrefab = GetPlantPrefab(plantType);
         if (plantPrefab == null)
         {

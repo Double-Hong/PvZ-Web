@@ -11,6 +11,7 @@ public class CherryBomb : Plant
     public void Bomb()
     {
         mAnimator.SetTrigger("Bomb");
+        EffectAudioManager.Instance.PlayEffect("Audio/CherryBomb");
         GetComponent<SpriteRenderer>().enabled = false;
         bomb.SetActive(true);
         Destroy(gameObject,1.5f);
