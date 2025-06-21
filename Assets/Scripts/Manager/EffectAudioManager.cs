@@ -23,6 +23,7 @@ public class EffectAudioManager : MonoSingleton<EffectAudioManager>
     protected override void Init()
     {
         var newSource = gameObject.AddComponent<AudioSource>();
+        // DontDestroyOnLoad(newSource);
         newSource.volume = volume;
         mAudioSources.Add(newSource);
     }
@@ -49,7 +50,7 @@ public class EffectAudioManager : MonoSingleton<EffectAudioManager>
     {
         if (string.IsNullOrEmpty(clipName)) return;
 
-        // 尝试从缓存中获取
+        //尝试从缓存中获取
         if (!mAudioClipCache.TryGetValue(clipName, out var clip))
         {
             clip = Resources.Load<AudioClip>(clipName);
@@ -76,16 +77,17 @@ public class EffectAudioManager : MonoSingleton<EffectAudioManager>
             if (!source.isPlaying)
                 return source;
         }
-
+        
         // 没有可用的，创建一个（限制总数）
         if (mAudioSources.Count < MaxSources)
         {
             var newSource = gameObject.AddComponent<AudioSource>();
             newSource.volume = volume;
+            newSource.spatialBlend = 0f;
             mAudioSources.Add(newSource);
             return newSource;
         }
-
+        
         // 全在播，返回第一个（可能会打断正在播放的）
         return mAudioSources[0];
     }
