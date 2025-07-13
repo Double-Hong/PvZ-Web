@@ -57,7 +57,7 @@ public class ConfigImporter : AssetPostprocessor
 
         // 生成类文件内容
         StringBuilder sb = new StringBuilder();
-        sb.AppendLine("using Config;");
+        // sb.AppendLine("using Config;");
         sb.AppendLine();
         sb.AppendLine($"public class {className}Config : BaseConfig");
         sb.AppendLine("{");
