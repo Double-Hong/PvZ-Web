@@ -110,10 +110,10 @@ public class UserPanel : MonoBehaviour
 
     private void GameOverBtnClick()
     {
-        // MainGameManager.GetInstance().GameFailNormal();
-        EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
-        UIManager.Show("TestUi");
-        // Destroy(gameObject);
+        MainGameManager.GetInstance().GameFailNormal();
+        // EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
+        // UIManager.Show("TestUi");
+        Destroy(gameObject);
     }
 
     private void QuitBtnClick()

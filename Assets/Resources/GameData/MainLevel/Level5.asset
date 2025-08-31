@@ -106,6 +106,6 @@ MonoBehaviour:
   - {fileID: 91489065653375577, guid: c27dcad7f05913e45b6e960fd7c92220, type: 3}
   winAwardType: 9
   winAward:
-    plantId: 5
+    plantId: 2
     message: 
     gold: 10

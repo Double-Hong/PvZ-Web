@@ -50,6 +50,6 @@ MonoBehaviour:
   - {fileID: 91489065653375577, guid: c27dcad7f05913e45b6e960fd7c92220, type: 3}
   winAwardType: 11
   winAward:
-    plantId: 2
+    plantId: 5
     message: 
     gold: 10

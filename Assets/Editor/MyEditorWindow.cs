@@ -2,10 +2,13 @@ using System.Threading;
 using GameData;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class MyEditorWindow : EditorWindow
 {
     private string myText = "";
+
+    private bool mShowTips;
 
     bool showBtn = true;
 
@@ -22,10 +25,11 @@ public class MyEditorWindow : EditorWindow
 
     private void OnGUI()
     {
+        Debug.Log("gui");
         //设置控件名称，以便焦点管理
         GUI.SetNextControlName("MyTextField");
         myText = EditorGUILayout.TextField("Enter Text:", myText);
-
+        
         if (GUILayout.Button("Focus on Text Field"))
         {
             // 使文本框获得焦点
@@ -35,7 +39,18 @@ public class MyEditorWindow : EditorWindow
         // 获取键盘焦点的控件 ID
         if (GUI.GetNameOfFocusedControl() == "MyTextField")
         {
-            EditorGUILayout.HelpBox("Text Field is focused", MessageType.Info);
+            EditorGUILayout.HelpBox("Text Field is focused", MessageType.Error);
+        }
+        
+        if (GUILayout.Button("test"))
+        {
+            Debug.Log("myh");
+            mShowTips = true;
+        }
+
+        if (mShowTips)
+        {
+            EditorGUILayout.HelpBox("test",MessageType.Error);
         }
 
         GUILayout.Label("Base Settings", EditorStyles.boldLabel);

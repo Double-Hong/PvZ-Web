@@ -15,11 +15,11 @@ MonoBehaviour:
   ProjectConf:
     projectName: PvZ Test
     Appid: wx5182762e49e2fe53
-    CDN: https://646f-doublehong-0g0z0nw2140402ce-1341589582.tcb.qcloud.la
+    CDN: https://646f-doublehong-4g7qyq9n5b530080-1341589582.tcb.qcloud.la/beta
     assetLoadType: 0
     compressDataPackage: 1
     VideoUrl: 
-    DST: D:/_Unity Project/PvZ - Web/minigameExport/5
+    DST: D:/_Unity Project/PvZ - Web/minigameExport/36
     StreamCDN: 
     bundleHashLength: 32
     bundlePathIdentifier: StreamingAssets;

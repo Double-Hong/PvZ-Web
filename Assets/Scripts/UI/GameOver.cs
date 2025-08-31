@@ -42,6 +42,7 @@ public class GameOver : MonoBehaviour
     private void OnBackMainBtnClick()
     {
         MainGameManager.GetInstance().BackToMain();
+        MainGameManager.GetInstance().SetCameraLow();
         GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
         Instantiate(prefab, MainGameManager.GetInstance().GameCanvas.transform);
         Destroy(gameObject);

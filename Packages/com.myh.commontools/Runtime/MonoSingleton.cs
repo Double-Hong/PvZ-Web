@@ -21,6 +21,7 @@ namespace myh
         /// </summary>
         public static T Instance => INSTANCE;
 
+
         /// <summary>
         /// 单例初始化
         /// </summary>
@@ -34,6 +35,7 @@ namespace myh
 
             GameObject obj = new GameObject(typeof(T).Name);
             obj.AddComponent<T>();
+            // DontDestroyOnLoad(obj);
         }
 
         /// <summary>

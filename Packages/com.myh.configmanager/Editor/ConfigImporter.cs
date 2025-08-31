@@ -1,9 +1,15 @@
 ﻿using System.IO;
 using System.Text;
-using UnityEditor;
 using UnityEngine;
 
-/// <summary>
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+
+namespace myhEditor
+{
+#if UNITY_EDITOR
+    /// <summary>
 /// 配置表导入器
 /// </summary>
 public class ConfigImporter : AssetPostprocessor
@@ -92,4 +98,7 @@ public class ConfigImporter : AssetPostprocessor
     }
     
     
+}
+#endif
+
 }

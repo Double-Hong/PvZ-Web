@@ -257,8 +257,8 @@ public class MainGameManager : MonoBehaviour
     private void SetMainMusic(string path)
     {
         mCurrentClip = Resources.Load<AudioClip>(path);
-        audioSource.time = 0;
         audioSource.clip = mCurrentClip;
+        audioSource.time = 0;
         audioSource.Play();
     }
 
@@ -310,7 +310,7 @@ public class MainGameManager : MonoBehaviour
         Instantiate(prefab, GameCanvas.transform);
         audioSource.clip = null;
         audioSource.PlayOneShot(Resources.Load<AudioClip>("Audio/losemusic"));
-        GameCanvas.GetComponent<Canvas>().worldCamera = null;
+        SetCameraHigh();
     }
 
     /// <summary>
