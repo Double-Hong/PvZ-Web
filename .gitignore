@@ -1,6 +1,7 @@
 ﻿/.idea/
 /.vs/PvZ/v16/
 /AssetBundles/WebGL/
+/Assets/StreamingAssets/
 /Library/
 /Logs/
 /minigameExport/
