@@ -1,45 +1,56 @@
-using System;
-using TMPro;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class TestUi : BaseView
 {
-
-    public TextMeshProUGUI num;
-
     public Button btn;
-    
-    // Start is called before the first frame update
-    protected override void Start()
+    public PlayableDirector director;
+
+    void Awake()
     {
-        btn.onClick.AddListener((() =>
-        {
-            // UIManager.Close("TestUi");
-            num.transform.position = new Vector3(num.transform.position.x - 1, num.transform.position.y);
-        }));
+        // btn = transform.Find("Button")?.GetComponent<Button>();
+        // director = transform.GetComponentInChildren<PlayableDirector>(true);
     }
 
-    private void Update()
+    protected override void Start()
     {
-        // Debug.Log($"local ---> {btn.transform.localPosition}");
-        // Debug.Log($"position ---> {btn.transform.position}");
-        // RectTransform rect = btn.GetComponent<RectTransform>();
-        // Debug.Log($"rect local ---> {rect.localPosition}");
-        // Debug.Log($"rect position ---> {rect.position}");
+        base.Start();
+        if (btn != null)
+        {
+            btn.onClick.AddListener(OnPlayBtnClick);
+        }
     }
 
     protected override void Init(params object[] args)
     {
-        base.Init();
-        TestController.inst.SetModel(new TestModel());
-        Debug.Log(TestModel.inst.num.ToString());
-        num.text = TestModel.inst.num.ToString();
+        base.Init(args);
+        if (director != null)
+        {
+            director.Stop();
+            director.time = 0;
+            director.Evaluate();
+        }
+    }
+
+    private void OnPlayBtnClick()
+    {
+        if (director == null)
+        {
+            Debug.LogError("TestUi 未找到 PlayableDirector");
+            return;
+        }
+
+        director.time = 0;
+        director.Play();
     }
 
     public override void Close()
     {
+        if (btn != null)
+        {
+            btn.onClick.RemoveListener(OnPlayBtnClick);
+        }
         base.Close();
-        TestController.inst.DestroyModel();
     }
 }

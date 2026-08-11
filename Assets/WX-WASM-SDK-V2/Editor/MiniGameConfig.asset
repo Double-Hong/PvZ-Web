@@ -15,11 +15,12 @@ MonoBehaviour:
   ProjectConf:
     projectName: PvZ Test
     Appid: wx5182762e49e2fe53
-    CDN: https://646f-doublehong-4g7qyq9n5b530080-1341589582.tcb.qcloud.la/beta
+    CDN: http://192.168.1.4/abTest
     assetLoadType: 0
     compressDataPackage: 1
     VideoUrl: 
-    DST: D:/_Unity Project/PvZ - Web/minigameExport/36
+    relativeDST: D:/_Unity Project/PvZ - Web/minigameExport/58
+    DST: D:/_Unity Project/PvZ - Web/minigameExport/58
     StreamCDN: 
     bundleHashLength: 32
     bundlePathIdentifier: StreamingAssets;
@@ -45,6 +46,7 @@ MonoBehaviour:
     UseCompressedTexture: 0
     UseMiniGameChat: 0
     PreloadWXFont: 0
+    disableMultiTouch: 0
   CompileOptions:
     DevelopBuild: 0
     AutoProfile: 0
@@ -64,6 +66,8 @@ MonoBehaviour:
     enablePerfAnalysis: 0
     iOSAutoGCInterval: 10000
     enableIOSPerformancePlus: 0
+    enableiOSMetal: 0
+    enableEmscriptenGLX: 0
     brotliMT: 1
     enableWasm2023: 0
   CompressTexture:

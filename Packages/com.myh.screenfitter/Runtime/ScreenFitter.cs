@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+
+#if minigame && !UNITY_STANDALONE_WIN
 using WeChatWASM;
+#endif
 
 namespace myh
 {
@@ -23,7 +26,7 @@ namespace myh
             transform.GetComponent<RectTransform>().anchorMin = new Vector2(
                 (float)safeArea.left / (float)safeArea.width, -(float)safeArea.top / (float)safeArea.height);
             cs.referenceResolution = new Vector2(cs.referenceResolution.x, cs.referenceResolution.y * (1.0f + py));
-#elif minigame
+#elif minigame && !UNITY_STANDALONE_WIN
             var info = WX.GetWindowInfo();
             float py = (float)info.safeArea.top / (float)info.windowHeight;
             transform.GetComponent<RectTransform>().anchorMin =

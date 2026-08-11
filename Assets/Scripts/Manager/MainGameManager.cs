@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Cinemachine;
 using Configs;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using GameData;
 using UnityEngine;
@@ -10,6 +11,11 @@ using UnityEngine.UI;
 
 public class MainGameManager : MonoBehaviour
 {
+    [Header("是否启用AB")]
+    public bool isAssetBundle;
+
+    public LoadUi loadUi;
+    
     public Canvas GameCanvas;
 
     public Camera MyCamera;
@@ -81,11 +87,24 @@ public class MainGameManager : MonoBehaviour
 
     private void Awake()
     {
-        GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
-        Instantiate(prefab, GameCanvas.transform);
-        ConfigManager.SetPathProvider(new ConfigPathProvider());
-        UIManager.Init(new UiPathProvider(),rootRect);
-        EffectAudioManager.InitSingleton();
+        SendToLoadAb().Forget();
+    }
+
+    private async UniTask SendToLoadAb()
+    {
+        try
+        {
+            await UIManager.Init(new UiPathProvider(), rootRect);
+            loadUi.gameObject.SetActive(false);
+            GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
+            Instantiate(prefab, GameCanvas.transform);
+            ConfigManager.SetPathProvider(new ConfigPathProvider());
+            EffectAudioManager.InitSingleton();
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"游戏启动加载失败: {e.Message}");
+        }
     }
 
     private void Start()
@@ -285,6 +304,7 @@ public class MainGameManager : MonoBehaviour
         GameBackToMainEvent += ZombieManager.GetInstance().DestroyLine;
         GameBackToMainEvent += () => sunManager.OnBackToMenuEvent();
         GameBackToMainEvent += () => gameState = false;
+        GameBackToMainEvent += () => Time.timeScale = 1f;
     }
 
     #endregion

@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+// using WeChatWASM;
 
 public class UserPanel : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class UserPanel : MonoBehaviour
 
     private PlayerData playerData;
 
+    public Button testBtn;
+
     // Start is called before the first frame update
 
     private void OnEnable()
@@ -38,6 +41,7 @@ public class UserPanel : MonoBehaviour
         BeginGameBtn.onClick.AddListener(GameBeginBtnClick);
         QuitBtn.onClick.AddListener(QuitBtnClick);
         GameOverBtn.onClick.AddListener(GameOverBtnClick);
+        testBtn.onClick.AddListener(TestBtnClick);
     }
 
     void Start()
@@ -60,6 +64,15 @@ public class UserPanel : MonoBehaviour
             }
         }
 
+        
+        // ABTest();
+    }
+
+    private void ABTest()
+    {
+        var ab = AssetBundle.LoadFromFile(Application.streamingAssetsPath + "/WebGL");
+        AssetBundleManifest abmf = ab.LoadAsset<AssetBundleManifest>("AssetBundleManifest");
+        abmf.GetAllAssetBundles();
     }
 
     private void OpenLogin()
@@ -114,7 +127,41 @@ public class UserPanel : MonoBehaviour
         // EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
         // UIManager.Show("TestUi");
         Destroy(gameObject);
+        Debug.Log(Application.dataPath);
+        AssetBundle ab = AssetBundle.LoadFromFile(Application.dataPath + "/StreamingAssets/prefab/plant");
+        Debug.Log(ab.name);
+        GameObject one = ab.LoadAsset<GameObject>("PeaShooter");
+        Instantiate(one);
     }
+    
+    private void TestBtnClick()
+    {
+        UIManager.ShowTest<TestUi>("TestUi");
+    }
+
+    /// <summary>
+    /// 调用云函数示例
+    /// </summary>
+    // private void Test()
+    // {
+    //     WXBase.cloud.CallFunction(new CallFunctionParam()
+    //     {
+    //         name = "add",
+    //         data = new
+    //         {
+    //             a = 1,
+    //             b = 2
+    //         },
+    //         success = (res) =>
+    //         {
+    //             Debug.Log("调用成功");
+    //         },
+    //         fail = (error) =>
+    //         {
+    //             Debug.LogError("调用失败");
+    //         }
+    //     });
+    // }
 
     private void QuitBtnClick()
     {

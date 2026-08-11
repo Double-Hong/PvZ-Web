@@ -1,3 +1,4 @@
+#if minigame && !UNITY_STANDALONE_WIN
 using UnityEngine;
 using WeChatWASM;
 using TMPro;
@@ -90,3 +91,5 @@ public class WXInputFieldTmpAdapter : MonoBehaviour, IPointerClickHandler, IPoin
         _isShowKeyboard = false; // 更新键盘显示状态
     }
 }
+
+#endif

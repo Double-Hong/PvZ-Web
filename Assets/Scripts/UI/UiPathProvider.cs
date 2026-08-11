@@ -6,7 +6,7 @@ public class UiPathProvider : IUiPathProvider
     private Dictionary<string, string> uiPaths = new Dictionary<string, string>
     {
         { "GameOverUi", "Prefabs/UI/GameOverUi/GameOverUi2" },
-        { "TestUi", "Prefabs/UI/TestUi" },
+        { "TestUi", "Prefabs/UI/Test/TestUi" },
         { "ShovelStateUi","Prefabs/UI/ShovelStateUi"},
         { "CommonTipsUi","Prefabs/UI/CommonTipsUi/CommonTipsUi"}
     };

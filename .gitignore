@@ -1,6 +1,6 @@
 ﻿/.idea/
 /.vs/PvZ/v16/
-/AssetBundles/WebGL/
+/AssetBundles/
 /Assets/StreamingAssets/
 /HybridCLRData/
 /Library/
@@ -25,3 +25,4 @@
 /WxEditor.csproj
 /myh.commontools.csproj
 /*.csproj
+/.vscode

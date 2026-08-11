@@ -1,3 +1,4 @@
+#if minigame && !UNITY_STANDALONE_WIN
 using UnityEngine;
 using WeChatWASM;
 using UnityEngine.UI;
@@ -59,10 +60,10 @@ public class WXInputFieldAdapter : MonoBehaviour, IPointerClickHandler, IPointer
     private void ShowKeyboard()
     {
         if (_isShowKeyboard) return;
-
+        
         WX.ShowKeyboard(new ShowKeyboardOption()
         {
-            defaultValue = _inputField.text,
+            defaultValue = "xxx",
             maxLength = 20,
             confirmType = "go"
         });
@@ -77,7 +78,7 @@ public class WXInputFieldAdapter : MonoBehaviour, IPointerClickHandler, IPointer
     private void HideKeyboard()
     {
         if (!_isShowKeyboard) return;
-
+        
         WX.HideKeyboard(new HideKeyboardOption());
         //删除掉相关事件监听
         WX.OffKeyboardInput(this.OnInput);
@@ -86,3 +87,4 @@ public class WXInputFieldAdapter : MonoBehaviour, IPointerClickHandler, IPointer
         _isShowKeyboard = false;
     }
 }
+#endif
