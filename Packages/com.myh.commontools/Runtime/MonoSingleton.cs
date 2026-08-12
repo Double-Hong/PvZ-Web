@@ -60,7 +60,7 @@ namespace myh
         protected abstract void ResetData();
 
         /// <summary>
-        /// 单例重置化方法，子类需要实现
+        /// 单例初始化方法，子类需要实现
         /// </summary>
         protected abstract void Init();
 

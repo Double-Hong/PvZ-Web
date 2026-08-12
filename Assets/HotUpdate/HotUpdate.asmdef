@@ -1,0 +1,21 @@
+{
+    "name": "HotUpdate",
+    "rootNamespace": "",
+    "references": [
+        "Main",
+        "myh.commontools",
+        "myh.configmanager",
+        "UniTask",
+        "Unity.TextMeshPro",
+        "Cinemachine"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

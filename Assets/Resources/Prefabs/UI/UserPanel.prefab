@@ -2291,8 +2291,8 @@ GameObject:
   m_Component:
   - component: {fileID: 814691160210940594}
   - component: {fileID: 417995295808015077}
-  - component: {fileID: 3414148670740458009}
   - component: {fileID: 1057305975229002274}
+  - component: {fileID: 3650845345224971037}
   m_Layer: 5
   m_Name: UserPanel
   m_TagString: Untagged
@@ -2336,7 +2336,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9221542636893768052}
   m_CullTransparentMesh: 1
---- !u!114 &3414148670740458009
+--- !u!114 &1057305975229002274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2345,7 +2345,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 9221542636893768052}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f2bd3f83d04f814f808422c1c798f4c, type: 3}
+  m_Script: {fileID: 11500000, guid: d1414cbecf19fc1469e1ecbe62867fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3650845345224971037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9221542636893768052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4c3d2708593e04c93f0964627af06c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerName: {fileID: 4779173515584036673}
@@ -2359,15 +2371,3 @@ MonoBehaviour:
   GoldNumber: {fileID: 1585140011009631306}
   player: 0
   testBtn: {fileID: 1025540451061884528}
---- !u!114 &1057305975229002274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9221542636893768052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1414cbecf19fc1469e1ecbe62867fee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
