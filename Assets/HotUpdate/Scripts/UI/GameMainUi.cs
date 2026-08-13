@@ -48,7 +48,7 @@ public class GameMainUi : MonoBehaviour
     {
         MainGameManager.GetInstance().ChangeShovelState(true);
         UIManager.Show("ShovelStateUi");
-        EffectAudioManager.Instance.PlayEffect("Audio/Shovel");
+        EffectAudioManager.GetInstance().PlayEffect("Audio/Shovel");
     }
     
 }

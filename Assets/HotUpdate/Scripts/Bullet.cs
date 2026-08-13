@@ -73,7 +73,7 @@ public class Bullet : MonoBehaviour
             Zombie zombie = other.GetComponent<Zombie>();
             if (zombie.GetRow() != row || !zombie.IsAlive() || mAttackTarget != null) return;
             mAttackTarget = other.gameObject;
-            EffectAudioManager.Instance.PlayEffect("Audio/PeaAttack");
+            EffectAudioManager.GetInstance().PlayEffect("Audio/PeaAttack");
             zombie.DamageHealth(attack,bulletType,null);
             Destroy(gameObject);
         }

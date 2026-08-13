@@ -197,7 +197,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 915583293415667397}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1
@@ -218,8 +218,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4127549572873552288}
-  - component: {fileID: 915583293415667397}
   - component: {fileID: 6256621660964383712}
+  - component: {fileID: 774043548600423805}
   m_Layer: 5
   m_Name: CardTemplate
   m_TagString: Untagged
@@ -252,27 +252,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 70, y: 98}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &915583293415667397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5052156758764341331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43dd64c3e62d4940be63d081f8cb528, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bg: {fileID: 7290171781607277257}
-  elementNode: {fileID: 861812627204580985}
-  consumption: {fileID: 368556155060197397}
-  cardMask: {fileID: 5472342479737975816}
-  plantType: 0
-  cardCooldown: 2
-  startCardCooldown: 0
-  sunNeed: 50
-  CardState: 3
 --- !u!114 &6256621660964383712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,6 +272,27 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &774043548600423805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5052156758764341331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb4b0dd75373a874db350727b440e947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bg: {fileID: 7290171781607277257}
+  elementNode: {fileID: 861812627204580985}
+  consumption: {fileID: 368556155060197397}
+  cardMask: {fileID: 5472342479737975816}
+  plantType: 0
+  cardCooldown: 2
+  startCardCooldown: 0
+  sunNeed: 50
+  CardState: 3
 --- !u!1 &6841895823544227101
 GameObject:
   m_ObjectHideFlags: 0
@@ -414,7 +414,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 915583293415667397}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Card, Assembly-CSharp
         m_MethodName: OnClick
         m_Mode: 1

@@ -115,7 +115,7 @@ public class UserPanel : MonoBehaviour
             Debug.Log("已完成全部主线关卡");
             return;
         }
-        EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
+        EffectAudioManager.GetInstance().PlayEffect("Audio/ButtonClick");
         MainGameManager.GetInstance().OnLevelEnter();
 
         Destroy(gameObject);

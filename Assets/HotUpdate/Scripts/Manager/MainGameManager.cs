@@ -22,9 +22,7 @@ public class MainGameManager : MonoSingleton<MainGameManager>
     public Camera MyCamera;
 
     public AudioSource audioSource;
-
-    public SunManager sunManager;
-
+    
     public GameObject root;
 
     public GameObject MainGameUi;
@@ -99,6 +97,8 @@ public class MainGameManager : MonoSingleton<MainGameManager>
         GameCanvas = GameEntry.Instance.gameCanvas;
         root = GameEntry.Instance.root;
         rootRect = GameEntry.Instance.rootRect;
+        virtualCamera = GameEntry.Instance.virtualCamera;
+        audioSource = Instance.gameObject.AddComponent<AudioSource>();
         SendToLoadAb().Forget();
     }
 
@@ -255,12 +255,12 @@ public class MainGameManager : MonoSingleton<MainGameManager>
 
     private void SetZombieManagerState(bool state)
     {
-        GetComponent<ZombieManager>().enabled = state;
+        ZombieManager.GetInstance().SetAvailable(state);
     }
 
     private void SetSunManagerState(bool state)
     {
-        sunManager.enabled = state;
+        SunManager.GetInstance().enabled = state;
     }
 
     private void InitGameBeginEvents()
@@ -272,9 +272,9 @@ public class MainGameManager : MonoSingleton<MainGameManager>
             mainGameUi = Instantiate(mainGameUi, GameCanvas.transform);
             MainGameUi = mainGameUi;
         };
-        GameBeginEvent += () => sunManager.InitAll();
-        GameBeginEvent += () => ZombieManager.GetInstance().InitAll();
-        GameBeginEvent += () => SetZombieManagerState(true);
+        GameBeginEvent += () => SunManager.GetInstance().InitAll();
+        GameBeginEvent += () => ZombieManager.GetInstance().SetAvailable(true);
+        // GameBeginEvent += () => ;
         GameBeginEvent += () => SetSunManagerState(true);
         GameBeginEvent += () => SetMainMusic("Audio/bgm1");
         GameBeginEvent += () =>
@@ -318,8 +318,8 @@ public class MainGameManager : MonoSingleton<MainGameManager>
         GameBackToMainEvent += () => SetZombieManagerState(false);
         GameBackToMainEvent += () => SetSunManagerState(false);
         GameBackToMainEvent += ClearRoot;
-        GameBackToMainEvent += ZombieManager.GetInstance().DestroyLine;
-        GameBackToMainEvent += () => sunManager.OnBackToMenuEvent();
+        GameBackToMainEvent += ()=> ZombieManager.GetInstance().DestroyLine();
+        GameBackToMainEvent += () => SunManager.GetInstance().OnBackToMenuEvent();
         GameBackToMainEvent += () => gameState = false;
         GameBackToMainEvent += () => Time.timeScale = 1f;
     }

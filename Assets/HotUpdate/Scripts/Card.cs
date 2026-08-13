@@ -215,7 +215,7 @@ public class Card : MonoBehaviour
         }
         else if (CardState == CardStateEnum.Cooling)
         {
-            EffectAudioManager.Instance.PlayEffect("Audio/Error");
+            EffectAudioManager.GetInstance().PlayEffect("Audio/Error");
             UIManager.ShowTest<CommonTipsUi>("CommonTipsUi","冷却中");
         }
         else
@@ -226,7 +226,7 @@ public class Card : MonoBehaviour
             }
             else
             {
-                EffectAudioManager.Instance.PlayEffect("Audio/Error");
+                EffectAudioManager.GetInstance().PlayEffect("Audio/Error");
                 UIManager.Show<CommonTipsUi>("CommonTipsUi","阳光不足");
             }
         }

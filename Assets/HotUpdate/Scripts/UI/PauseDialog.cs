@@ -38,7 +38,7 @@ public class PauseDialog : MonoBehaviour
     private void OnBackMainBtnClick()
     {
         SaveMusicAndEffect();
-        EffectAudioManager.Instance.PlayEffect("Audio/ButtonClick");
+        EffectAudioManager.GetInstance().PlayEffect("Audio/ButtonClick");
         MainGameManager.GetInstance().BackToMain();
         GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
         Instantiate(prefab, MainGameManager.GetInstance().GameCanvas.transform);
@@ -51,13 +51,13 @@ public class PauseDialog : MonoBehaviour
     private void SaveMusicAndEffect()
     {
         MainGameManager.GetInstance().SetAudioSound(MusicSlider.value);
-        EffectAudioManager.Instance.SetVolume(EffectSlider.value);
+        EffectAudioManager.GetInstance().SetVolume(EffectSlider.value);
     }
 
     private void InitMusicSlider()
     {
         MusicSlider.value = MainGameManager.GetInstance().audioSource.volume;
-        EffectSlider.value = EffectAudioManager.Instance.GetVolume();
+        EffectSlider.value = EffectAudioManager.GetInstance().GetVolume();
     }
 
 

@@ -19,7 +19,14 @@ namespace myh
         /// <summary>
         /// 单例提供器
         /// </summary>
-        public static T Instance => INSTANCE;
+        public static T GetInstance()
+        {
+            if (INSTANCE == null)
+            {
+                InitSingleton();
+            }
+            return INSTANCE;
+        }
 
 
         /// <summary>

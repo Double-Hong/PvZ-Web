@@ -1,10 +1,11 @@
 using System;
 using System.Collections;
+using myh;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
-public class SunManager : MonoBehaviour
+public class SunManager : MonoSingleton<SunManager>
 {
     public int mSunshineNumber;
 
@@ -24,19 +25,19 @@ public class SunManager : MonoBehaviour
 
     private static SunManager Instance;
 
-    private SunManager()
+    protected override void ResetData()
     {
-        Instance = this;
+        ;
     }
 
-    public static SunManager GetInstance()
+    protected override void Init()
     {
-        if (Instance == null)
-        {
-            Instance = new SunManager();
-        }
+        ;
+    }
 
-        return Instance;
+    protected override void Destroy()
+    {
+        ;
     }
 
     /// <summary>

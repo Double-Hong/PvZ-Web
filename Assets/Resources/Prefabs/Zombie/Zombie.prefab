@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8503018487894309421}
   - component: {fileID: 8503018487894309426}
   - component: {fileID: 8503018487894309427}
-  - component: {fileID: 9013790601581666021}
+  - component: {fileID: 8993424412761276690}
   - component: {fileID: 709324979215566745}
   - component: {fileID: 3917199668811119564}
   - component: {fileID: 460946994622785950}
@@ -110,7 +110,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &9013790601581666021
+--- !u!114 &8993424412761276690
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,13 +119,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8503018487894309424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331d699612cbe47409b71662b2ceae11, type: 3}
+  m_Script: {fileID: 11500000, guid: f851987d891e64149b8cc59e4c60b320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
   speed: 0.3
   mAttackTarget: {fileID: 0}
-  mAttackNumber: 10
+  mAttackNumber: 0
   row: 0
 --- !u!50 &709324979215566745
 Rigidbody2D:

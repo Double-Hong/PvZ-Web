@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MainGame : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //TODO 放到热更层初始化
     void Start()
     {
         InitModule();

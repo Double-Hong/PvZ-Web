@@ -357,6 +357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 807825066}
   - component: {fileID: 807825067}
+  - component: {fileID: 807825068}
   m_Layer: 0
   m_Name: Root
   m_TagString: Untagged
@@ -396,6 +397,18 @@ MonoBehaviour:
   root: {fileID: 807825065}
   rootRect: {fileID: 1707295114}
   virtualCamera: {fileID: 1480554992}
+--- !u!114 &807825068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 807825065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 42a65b3cf96c2f6408679b906f480f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1361753973
 GameObject:
   m_ObjectHideFlags: 0

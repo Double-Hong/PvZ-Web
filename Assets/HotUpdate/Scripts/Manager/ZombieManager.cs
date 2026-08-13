@@ -1,11 +1,12 @@
 using System;
 using System.Collections.Generic;
 using GameData;
+using myh;
 using UnityEngine;
 using UnityEngine.Rendering;
 using Random = System.Random;
 
-public class ZombieManager : MonoBehaviour
+public class ZombieManager : MonoSingleton<ZombieManager>
 {
     private LevelData _levelData;
 
@@ -21,6 +22,7 @@ public class ZombieManager : MonoBehaviour
 
     private Transform lastDieTransform;
 
+    private bool available = false;
     /// <summary>
     /// 僵尸生成间隔
     /// </summary>
@@ -41,24 +43,7 @@ public class ZombieManager : MonoBehaviour
     private int zombieNumber = 0;
 
     private Dictionary<string, AudioClip> mZombieAudioManager;
-
-    private static ZombieManager INSTANCE;
-
-    private ZombieManager()
-    {
-        INSTANCE = this;
-    }
-
-    public static ZombieManager GetInstance()
-    {
-        if (INSTANCE == null)
-        {
-            INSTANCE = new ZombieManager();
-        }
-
-        return INSTANCE;
-    }
-
+    
     private void OnEnable()
     {
         zombieNumber = 0;
@@ -67,10 +52,13 @@ public class ZombieManager : MonoBehaviour
 
     private void Update()
     {
-        ProduceZombieUpdate();
-        if (lastZombieFlag && checkLastFlag)
+        if (available)
         {
-            CheckLastZombieDie();
+            ProduceZombieUpdate();
+            if (lastZombieFlag && checkLastFlag)
+            {
+                CheckLastZombieDie();
+            }
         }
     }
 
@@ -80,19 +68,34 @@ public class ZombieManager : MonoBehaviour
         Destroy(line);
     }
 
-    public void InitAll()
+    public void SetAvailable(bool state)
     {
-        Init();
+        available = state;
+    }
+    
+    private void InitAll()
+    {
         InitLineInfo();
         ReadLevelInfo();
     }
-    
-    private void Init()
+
+    protected override void ResetData()
+    {
+        Debug.Log("ZombieManager Reset");
+    }
+
+    protected override void Init()
     {
         zombieTime = ZOMBIE_TIME;
         zombieTimer = 0;
         lastZombieFlag = false;
         checkLastFlag = true;
+        InitAll();
+    }
+
+    protected override void Destroy()
+    {
+        Debug.Log("ZombieManager Destroy");
     }
 
     /// <summary>

@@ -73,12 +73,12 @@ public class PreparationUi : MonoBehaviour
                 GameObject selectedCard = Instantiate(card, CardList.transform).gameObject;
                 card.bg.color = Color.black;
                 card.elementNode.color = Color.black;
-                EffectAudioManager.Instance.PlayEffect("Audio/CardClick");
+                EffectAudioManager.GetInstance().PlayEffect("Audio/CardClick");
                 selectedCard.GetComponent<Card>().InitCard(() =>
                 {
                     card.bg.color = Color.white;
                     card.elementNode.color = Color.white;
-                    EffectAudioManager.Instance.PlayEffect("Audio/CardClick");
+                    EffectAudioManager.GetInstance().PlayEffect("Audio/CardClick");
                     mCards.Remove(prefab);
                     RefreshUi();
                     Destroy(selectedCard);

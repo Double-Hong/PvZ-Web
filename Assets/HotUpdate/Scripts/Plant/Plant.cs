@@ -99,7 +99,7 @@ public class Plant : MonoBehaviour, IPointerClickHandler
         Debug.Log($"row:{row},column:{column},{gameObject.name}");
         if (MainGameManager.GetInstance().IsTakeShovel() && mPlantState != PlantState.Disable)
         {
-            EffectAudioManager.Instance.PlayEffect("Audio/RemovePlant");
+            EffectAudioManager.GetInstance().PlayEffect("Audio/RemovePlant");
             MainGameManager.GetInstance().ChangeShovelState(false);
             UIManager.Hide("ShovelStateUi");
             Destroy(gameObject);

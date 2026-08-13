@@ -852,8 +852,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 67b440d83db6d8f4c9c40d0a37749402, type: 2}
-  m_sharedMaterial: {fileID: -6816552905086066570, guid: 67b440d83db6d8f4c9c40d0a37749402, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -877,7 +877,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.35
+  m_fontSize: 29.95
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1335,8 +1335,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8456942514268961928}
-  - component: {fileID: 448356718374701158}
   - component: {fileID: 9216607733915680220}
+  - component: {fileID: 6241420731016251520}
   m_Layer: 5
   m_Name: GameMainUi
   m_TagString: Untagged
@@ -1368,23 +1368,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &448356718374701158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8849779605405060595}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b1aa7c5863334f438453e9acd019cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseBtn: {fileID: 5183150013412483741}
-  gatherSunBtn: {fileID: 5183150013487677501}
-  shovelBtn: {fileID: 7980683501034931933}
-  cardList: {fileID: 5183150012644050744}
-  sunNumber: {fileID: 5183150013498778467}
 --- !u!114 &9216607733915680220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,3 +1380,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1414cbecf19fc1469e1ecbe62867fee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6241420731016251520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8849779605405060595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daeaeb02f015c4f438a791f3b542c1cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseBtn: {fileID: 5183150013412483741}
+  gatherSunBtn: {fileID: 5183150013487677501}
+  shovelBtn: {fileID: 7980683501034931933}
+  cardList: {fileID: 5183150012644050744}
+  sunNumber: {fileID: 5183150013498778467}
