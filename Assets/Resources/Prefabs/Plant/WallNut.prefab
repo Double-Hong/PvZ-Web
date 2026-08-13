@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5906983214813927780}
   - component: {fileID: 5906983214813927803}
   - component: {fileID: 5906983214813927802}
-  - component: {fileID: 7539247421681099072}
+  - component: {fileID: 5948276833580996089}
   - component: {fileID: 5359302950835437113}
   m_Layer: 0
   m_Name: WallNut
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7539247421681099072
+--- !u!114 &5948276833580996089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,13 +117,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5906983214813927801}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f089b67c7c1cb764d926c31877db8d37, type: 3}
+  m_Script: {fileID: 11500000, guid: 920bfb5021d770b40ae28f1cef00ddf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 5
   row: 0
   column: 0
-  mHealth: 1000
+  mHealth: 0
 --- !u!61 &5359302950835437113
 BoxCollider2D:
   m_ObjectHideFlags: 0

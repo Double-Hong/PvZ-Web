@@ -119,7 +119,7 @@ public class Sun : MonoBehaviour, IPointerClickHandler
     {
         sunState = SunState.Clicked;
         transform.DOKill();
-        SunManager.GetInstance().GetSunAudio();
+        SunManager.GetInstance().PlayGetSunAudio();
     }
 
     /// <summary>

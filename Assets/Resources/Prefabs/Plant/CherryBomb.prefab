@@ -285,7 +285,7 @@ GameObject:
   - component: {fileID: 5421219695453121640}
   - component: {fileID: 5421219695453121643}
   - component: {fileID: 5421219695453121642}
-  - component: {fileID: 8518010888176625689}
+  - component: {fileID: 3022053453993810455}
   - component: {fileID: 3515054637404167363}
   m_Layer: 0
   m_Name: CherryBomb
@@ -385,7 +385,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8518010888176625689
+--- !u!114 &3022053453993810455
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -394,13 +394,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 5421219695453121645}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 586139cddd521cc408906007c88fc317, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b343088930325d41aea6c9c226fcb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 6
   row: 0
   column: 0
-  mHealth: 500
+  mHealth: 0
   bomb: {fileID: 2746734129539337656}
 --- !u!61 &3515054637404167363
 BoxCollider2D:

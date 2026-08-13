@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 655405639666873803}
   - component: {fileID: 5720525901545932853}
-  - component: {fileID: 3928903357873816052}
+  - component: {fileID: 6835522332380310106}
   - component: {fileID: 5179709209280182312}
   m_Layer: 0
   m_Name: Cell
@@ -60,7 +60,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &3928903357873816052
+--- !u!114 &6835522332380310106
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -69,7 +69,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5819302889867722038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9b9b82179f88d34d904f3d3c4f11a7f, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f3db61c7e439b34ca44f565f9a5598c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   currentPlant: {fileID: 0}

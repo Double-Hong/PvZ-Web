@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ConfigManager
@@ -48,6 +49,31 @@ public class ConfigManager
         }
 
         Debug.LogError($"未找到 {type.Name} 中 id 为 {id} 的配置");
+        return null;
+    }
+
+    public static List<BaseConfig> GetConfigs<T>() where T : BaseConfig, new()
+    {
+        Type type = typeof(T);
+
+        // 如果缓存中没有该类型的配置，先加载
+        if (!configCache.ContainsKey(type))
+        {
+            LoadConfig<T>();
+        }
+
+        if (configCache.TryGetValue(type, out var value))
+        {
+            List<BaseConfig> list = new List<BaseConfig>();
+            foreach (var pair in value)
+            {
+                list.Add(pair.Value);
+            }
+
+            return list;
+        }
+        
+        Debug.LogError($"未找到 {type.Name} 的配置");
         return null;
     }
 

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8136770623166923274}
   - component: {fileID: 4956391368936583906}
-  - component: {fileID: 1023121129428267828}
+  - component: {fileID: 8594682053729700731}
   m_Layer: 5
   m_Name: ShovelStateUi
   m_TagString: Untagged
@@ -48,7 +48,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 551389179795794537}
   m_CullTransparentMesh: 1
---- !u!114 &1023121129428267828
+--- !u!114 &8594682053729700731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -57,7 +57,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 551389179795794537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d9d409147bafc4aa726533113bf467, type: 3}
+  m_Script: {fileID: 11500000, guid: 75df8c59db3dce443976459880b1df92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   CancelBtn: {fileID: 7780259292223303233}

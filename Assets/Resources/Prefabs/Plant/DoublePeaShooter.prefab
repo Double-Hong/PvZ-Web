@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9144970120057023763}
   - component: {fileID: 5021054083096416671}
   - component: {fileID: 5300248932808216453}
-  - component: {fileID: 4168601989226846633}
+  - component: {fileID: 525419525387419368}
   - component: {fileID: 6213075133637995068}
   m_Layer: 0
   m_Name: DoublePeaShooter
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &4168601989226846633
+--- !u!114 &525419525387419368
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,16 +117,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 5127259771984655379}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fc01b31b9d9c894d98f44d0391c9bcf, type: 3}
+  m_Script: {fileID: 11500000, guid: e2049ea49e9e22c4394b4d1c09ffeee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 2
   row: 0
   column: 0
-  mHealth: 100
+  mHealth: 0
   bullets:
-  - {fileID: -284570795073665176, guid: 510a93d623593d64da2d51420ba41a17, type: 3}
-  - {fileID: -284570795073665176, guid: 510a93d623593d64da2d51420ba41a17, type: 3}
+  - {fileID: 2340186515907229429, guid: 510a93d623593d64da2d51420ba41a17, type: 3}
+  - {fileID: 2340186515907229429, guid: 510a93d623593d64da2d51420ba41a17, type: 3}
   mShootTime: 2
   mShootTimer: 0
 --- !u!61 &6213075133637995068

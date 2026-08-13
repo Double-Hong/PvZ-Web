@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4247305646749787509}
   - component: {fileID: 5297322824611220727}
   - component: {fileID: 6082853542585894756}
-  - component: {fileID: 878827570529829046}
+  - component: {fileID: 689080687034525798}
   - component: {fileID: 3440234153466309027}
   m_Layer: 0
   m_Name: PeaShooter
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &878827570529829046
+--- !u!114 &689080687034525798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,15 +117,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3421652911563593981}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44d85476d0b9a0c46bfdc56a36d6548f, type: 3}
+  m_Script: {fileID: 11500000, guid: 318f7f6643c86714996f77d1127428af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 1
   row: 0
   column: 0
-  mHealth: 100
+  mHealth: 0
   bullets:
-  - {fileID: -284570795073665176, guid: 510a93d623593d64da2d51420ba41a17, type: 3}
+  - {fileID: 2340186515907229429, guid: 510a93d623593d64da2d51420ba41a17, type: 3}
   mShootTime: 2
   mShootTimer: 0
 --- !u!61 &3440234153466309027

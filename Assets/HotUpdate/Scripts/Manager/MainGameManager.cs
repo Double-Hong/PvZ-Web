@@ -98,7 +98,7 @@ public class MainGameManager : MonoSingleton<MainGameManager>
         root = GameEntry.Instance.root;
         rootRect = GameEntry.Instance.rootRect;
         virtualCamera = GameEntry.Instance.virtualCamera;
-        audioSource = Instance.gameObject.AddComponent<AudioSource>();
+        audioSource = GetInstance().gameObject.AddComponent<AudioSource>();
         SendToLoadAb().Forget();
     }
 

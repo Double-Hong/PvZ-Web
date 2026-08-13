@@ -25,6 +25,8 @@ public class SunManager : MonoSingleton<SunManager>
 
     private static SunManager Instance;
 
+    private AudioSource audioSource;
+    
     protected override void ResetData()
     {
         ;
@@ -32,7 +34,7 @@ public class SunManager : MonoSingleton<SunManager>
 
     protected override void Init()
     {
-        ;
+        audioSource = GetInstance().gameObject.AddComponent<AudioSource>();
     }
 
     protected override void Destroy()
@@ -133,9 +135,9 @@ public class SunManager : MonoSingleton<SunManager>
     /// <summary>
     /// 播放获取阳光时的音效
     /// </summary>
-    public void GetSunAudio()
+    public void PlayGetSunAudio()
     {
-        GetComponent<AudioSource>().PlayOneShot(Resources.Load<AudioClip>("Audio/GetSun"));
+        audioSource.PlayOneShot(Resources.Load<AudioClip>("Audio/GetSun"));
     }
 
     /// <summary>
@@ -225,6 +227,6 @@ public class SunManager : MonoSingleton<SunManager>
             sun.SetState(SunState.Clicked);
         }
 
-        GetSunAudio();
+        PlayGetSunAudio();
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1992495595394613198}
   - component: {fileID: 8256147576621511661}
   - component: {fileID: 8074958296670878410}
-  - component: {fileID: 7776004333322636477}
+  - component: {fileID: 3520290780016759584}
   - component: {fileID: 4984715617814292000}
   m_Layer: 6
   m_Name: Sun
@@ -108,7 +108,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7776004333322636477
+--- !u!114 &3520290780016759584
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,7 +117,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3879403289615839700}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e9f059e1adbb0049a02793cefcb3b00, type: 3}
+  m_Script: {fileID: 11500000, guid: 140d48f6bf87b6d4299a3811e68ad495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   sunState: 0

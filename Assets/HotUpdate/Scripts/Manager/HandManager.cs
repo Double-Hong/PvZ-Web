@@ -1,25 +1,23 @@
 using System;
 using System.Collections.Generic;
 using GameData;
+using myh;
 using UnityEngine;
 
-public class HandManager : MonoBehaviour
+public class HandManager : MonoSingleton<HandManager>
 {
-    private static HandManager INSTANCE;
-    
-    private HandManager()
+    protected override void ResetData()
     {
-        INSTANCE = this;
     }
 
-    public static HandManager GetInstance()
+    protected override void Init()
     {
-        if (INSTANCE == null)
-        {
-            INSTANCE = new HandManager();
-        }
+        var list = ConfigManager.GetConfigs<PlantInfoConfig>();
+        Debug.Log($"11111{list.Count}");
+    }
 
-        return INSTANCE;
+    protected override void Destroy()
+    {
     }
 
     public List<Plant> plantPrefabList;

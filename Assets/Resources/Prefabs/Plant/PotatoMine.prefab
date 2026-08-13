@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 0.76, y: 0.69}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6406135044160118683
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 415699161875808139}
   - component: {fileID: 6436410074328813960}
   - component: {fileID: 3909812268687948724}
-  - component: {fileID: 6745742077982408872}
+  - component: {fileID: 1808512513264193949}
   - component: {fileID: 6939696534471846688}
   m_Layer: 0
   m_Name: PotatoMine
@@ -220,7 +220,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6745742077982408872
+--- !u!114 &1808512513264193949
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -229,13 +229,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 6406135044160118683}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ca8e5e77dab0fb4889dbb6ae4bbeb15, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fac7aacd7ab0d848858715d4ca40558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plantType: 4
   row: 0
   column: 0
-  mHealth: 50
+  mHealth: 0
   BoomNode: {fileID: 2530645517705354121}
   audioSource: {fileID: 6939696534471846688}
   mReadyState: 0
