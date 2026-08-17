@@ -864,18 +864,6 @@ PrefabInstance:
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -923,10 +911,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5013833162847436076, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5052156758764341331, guid: 45d638c4620e8474583d238d30d48580, type: 3}
       propertyPath: m_Name
       value: CardTemplate
@@ -935,57 +919,13 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8200273171317191211, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 5834548631393211825}
-    - target: {fileID: 8200273171317191211, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200273171317191211, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Card, HotUpdate
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 915583293415667397, guid: 45d638c4620e8474583d238d30d48580, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d638c4620e8474583d238d30d48580, type: 3}
 --- !u!1 &2042754465883293855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5052156758764341331, guid: 45d638c4620e8474583d238d30d48580, type: 3}
   m_PrefabInstance: {fileID: 6504763089302175948}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &717168483149087045
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042754465883293855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 70
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
---- !u!114 &5834548631393211825 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 774043548600423805, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-  m_PrefabInstance: {fileID: 6504763089302175948}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2042754465883293855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4b0dd75373a874db350727b440e947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &7137519207391707500 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
@@ -1035,18 +975,6 @@ PrefabInstance:
       value: 98
       objectReference: {fileID: 0}
     - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9999999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -1094,10 +1022,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5013833162847436076, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5052156758764341331, guid: 45d638c4620e8474583d238d30d48580, type: 3}
       propertyPath: m_Name
       value: CardTemplate
@@ -1106,59 +1030,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8200273171317191211, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 9083103273840078375}
-    - target: {fileID: 8200273171317191211, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnClick
-      objectReference: {fileID: 0}
-    - target: {fileID: 8200273171317191211, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Card, HotUpdate
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 915583293415667397, guid: 45d638c4620e8474583d238d30d48580, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45d638c4620e8474583d238d30d48580, type: 3}
---- !u!1 &3651437441561326345 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5052156758764341331, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-  m_PrefabInstance: {fileID: 8408324735580912474}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5886760528530778327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3651437441561326345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IgnoreLayout: 0
-  m_MinWidth: -1
-  m_MinHeight: -1
-  m_PreferredWidth: 70
-  m_PreferredHeight: -1
-  m_FlexibleWidth: -1
-  m_FlexibleHeight: -1
-  m_LayoutPriority: 1
 --- !u!224 &5618344696685247226 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4127549572873552288, guid: 45d638c4620e8474583d238d30d48580, type: 3}
   m_PrefabInstance: {fileID: 8408324735580912474}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &9083103273840078375 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 774043548600423805, guid: 45d638c4620e8474583d238d30d48580, type: 3}
-  m_PrefabInstance: {fileID: 8408324735580912474}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3651437441561326345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb4b0dd75373a874db350727b440e947, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

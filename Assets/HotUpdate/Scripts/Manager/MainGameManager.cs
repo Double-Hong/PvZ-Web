@@ -8,6 +8,9 @@ using DG.Tweening;
 using GameData;
 using myh;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEngine.Profiling;
+#endif
 using UnityEngine.UI;
 
 public class MainGameManager : MonoSingleton<MainGameManager>
@@ -134,6 +137,16 @@ public class MainGameManager : MonoSingleton<MainGameManager>
     }
 
     private float timer = 0;
+
+#if UNITY_EDITOR
+    /// <summary>
+    /// 【Profiler 练习】仅编辑器生效，默认关闭。打开后每帧会故意跑一段很慢的代码，用来学习 Unity Profiler。
+    /// 开启方式：Inspector 勾选，或运行时按 P。练完务必关掉，否则游戏会明显卡顿。
+    /// </summary>
+    [Header("Profiler 练习（默认关闭，练完请保持关闭）")]
+    [SerializeField]
+    private bool enableProfilerDemo = false;
+#endif
     
     private void Update()
     {
@@ -142,9 +155,105 @@ public class MainGameManager : MonoSingleton<MainGameManager>
             PreparationMoveCamera((() => Debug.Log("k")));
         }
 
+#if UNITY_EDITOR
+        // 按 P 开关 Profiler 练习。Hierarchy 路径：
+        // PlayerLoop → Update.ScriptRunBehaviourUpdate → MainGameManager.Update() → ProfilerDemo/HeavyWork
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            enableProfilerDemo = !enableProfilerDemo;
+            Debug.Log($"Profiler 练习已{(enableProfilerDemo ? "开启" : "关闭")}");
+        }
+
+        if (enableProfilerDemo)
+        {
+            ProfilerDemo_HeavyWork();
+        }
+#endif
+
         timer += Time.deltaTime;
         
     }
+
+#if UNITY_EDITOR
+    #region Profiler 练习（学习用，仅编辑器编译，正式包不会带上）
+
+    /// <summary>
+    /// 总入口。Profiler CPU Hierarchy 里会看到这条，以及下面三个子采样。
+    /// Total 时间 ≈ 三个子函数之和；Self 时间接近 0，因为自己几乎不干活。
+    /// </summary>
+    private void ProfilerDemo_HeavyWork()
+    {
+        Profiler.BeginSample("ProfilerDemo/HeavyWork");
+        ProfilerDemo_BurnCpu();
+        ProfilerDemo_AllocateGarbage();
+        ProfilerDemo_NestedMath();
+        Profiler.EndSample();
+    }
+
+    /// <summary>
+    /// 纯 CPU 计算：每帧 30 万次 Sqrt/Sin。
+    /// 预期：Time ms 很高（大约十几毫秒），GC Alloc = 0。
+    /// 对应真实项目：过深的循环、复杂数学、同步计算。
+    /// </summary>
+    private void ProfilerDemo_BurnCpu()
+    {
+        Profiler.BeginSample("ProfilerDemo/BurnCpu");
+        float sum = 0f;
+        for (int i = 0; i < 300000; i++)
+        {
+            sum += Mathf.Sqrt(i) * Mathf.Sin(i);
+        }
+
+        // 用一下结果，防止编译器把循环优化掉
+        if (sum < 0f)
+        {
+            Debug.Log(sum);
+        }
+
+        Profiler.EndSample();
+    }
+
+    /// <summary>
+    /// 每帧大量分配托管对象：new List + 字符串拼接。
+    /// 预期：Time ms 很低（不到 1ms），但 GC Alloc 大约几十 KB。
+    /// 过一会儿会触发 GC.Collect，那一帧会突然卡一下。
+    /// 对应真实项目：每帧 new、字符串拼接、装箱、GetComponent 缓存缺失。
+    /// </summary>
+    private void ProfilerDemo_AllocateGarbage()
+    {
+        Profiler.BeginSample("ProfilerDemo/AllocateGarbage");
+        var list = new List<string>(1000);
+        for (int i = 0; i < 800; i++)
+        {
+            list.Add("plant_" + i + "_" + Time.frameCount);
+        }
+
+        Profiler.EndSample();
+    }
+
+    /// <summary>
+    /// 再套一层调用栈，用来观察 Profiler 父子层级。
+    /// 预期：出现在 HeavyWork 下面，Time ms 大约几毫秒，GC Alloc = 0。
+    /// </summary>
+    private void ProfilerDemo_NestedMath()
+    {
+        Profiler.BeginSample("ProfilerDemo/NestedMath");
+        float acc = 0f;
+        for (int i = 0; i < 100000; i++)
+        {
+            acc += Mathf.Pow(i % 17, 2) / (i + 1);
+        }
+
+        if (acc < 0f)
+        {
+            Debug.Log(acc);
+        }
+
+        Profiler.EndSample();
+    }
+
+    #endregion
+#endif
 
     private void OnGUI()
     {

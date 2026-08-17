@@ -128,7 +128,7 @@ public class UserPanel : MonoBehaviour
         // UIManager.Show("TestUi");
         Destroy(gameObject);
         Debug.Log(Application.dataPath);
-        AssetBundle ab = AssetBundle.LoadFromFile(Application.dataPath + "/StreamingAssets/prefab/plant");
+        AssetBundle ab = AssetBundle.LoadFromFile(Application.dataPath + "/StreamingAssets/plant_c95f5c274b950d4af17f340be1523968");
         Debug.Log(ab.name);
         GameObject one = ab.LoadAsset<GameObject>("PeaShooter");
         Instantiate(one);

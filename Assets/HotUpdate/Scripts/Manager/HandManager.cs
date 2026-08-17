@@ -12,8 +12,7 @@ public class HandManager : MonoSingleton<HandManager>
 
     protected override void Init()
     {
-        var list = ConfigManager.GetConfigs<PlantInfoConfig>();
-        Debug.Log($"11111{list.Count}");
+        InitPlantConfig();
     }
 
     protected override void Destroy()
@@ -38,6 +37,23 @@ public class HandManager : MonoSingleton<HandManager>
     /// 当前植物种植成功时的回调
     /// </summary>
     private Action onPlantSuccess;
+
+    /// <summary>
+    /// 植物预制体根目录
+    /// </summary>
+    private const string PlantRootPath = "Prefabs/Plant";
+
+    private void InitPlantConfig()
+    {
+        var list = ConfigManager.GetConfigs<PlantInfoConfig>();
+        plantPrefabList = new List<Plant>(list.Count);
+        Debug.Log($"11111{list.Count}");
+        foreach (var config in list)
+        {
+            var plant = Resources.Load<Plant>($"{PlantRootPath}/{config.prefabPath}");
+            plantPrefabList.Add(plant);
+        }
+    }
     
     private void Update()
     {
@@ -55,7 +71,6 @@ public class HandManager : MonoSingleton<HandManager>
             }
         }
     }
-
 
     /// <summary>
     /// 将植物添加到Hand中

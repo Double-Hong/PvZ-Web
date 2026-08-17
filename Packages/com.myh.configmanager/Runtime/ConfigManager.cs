@@ -52,7 +52,7 @@ public class ConfigManager
         return null;
     }
 
-    public static List<BaseConfig> GetConfigs<T>() where T : BaseConfig, new()
+    public static List<T> GetConfigs<T>() where T : BaseConfig, new()
     {
         Type type = typeof(T);
 
@@ -64,10 +64,10 @@ public class ConfigManager
 
         if (configCache.TryGetValue(type, out var value))
         {
-            List<BaseConfig> list = new List<BaseConfig>();
+            List<T> list = new List<T>(value.Count);
             foreach (var pair in value)
             {
-                list.Add(pair.Value);
+                list.Add(pair.Value as T);
             }
 
             return list;

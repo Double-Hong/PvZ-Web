@@ -40,7 +40,7 @@ namespace myh
                 throw new Exception("单例反复初始化:" + typeof(T).Name);
             }
 
-            GameObject obj = new GameObject(typeof(T).Name);
+            GameObject obj = new GameObject($"{typeof(T).Name}(Singleton)");
             obj.AddComponent<T>();
             // DontDestroyOnLoad(obj);
         }

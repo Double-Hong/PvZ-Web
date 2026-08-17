@@ -70,7 +70,7 @@ public class PlayerData
         string json = PlayerPrefs.GetString(name);
         if (json == "")
         {
-            playerData = new PlayerData("", name, "", 0, 1, 1, new List<int> { 1 });
+            playerData = new PlayerData("", name, "", 0, 1, 1, new List<int> { 2 });
         }
         else
         {

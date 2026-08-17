@@ -26,6 +26,12 @@ public class PlantInfoConfig : BaseConfig
     public string greyName;
 
     /// <summary>
+    /// 预制体路径
+    /// 预制体路径(不包含前缀)
+    /// </summary>
+    public string prefabPath;
+
+    /// <summary>
     /// 冷却时间
     /// 植物的一般冷却时间
     /// </summary>
