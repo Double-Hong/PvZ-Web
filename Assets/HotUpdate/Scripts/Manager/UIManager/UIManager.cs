@@ -20,6 +20,11 @@ public class UIManager
     private static Dictionary<string, AssetBundle> assetBundles = new();
 
     private static bool isAb;
+
+    /// <summary>
+    /// 微信小游戏 wx.downloadFile 并发上限约为 10，超出由底层排队。
+    /// </summary>
+    private const int RemoteAbMaxConcurrency = 10;
     
     /// <summary>
     /// 初始化UI路径提供器
@@ -41,6 +46,36 @@ public class UIManager
 #else
         await BeginLoadAbLocal();
 #endif
+        HttpTest().Forget();
+    }
+
+    public static async UniTask<bool> HttpTest()
+    {
+        string url = $"{CdnConfig.Root}1.txt?{DateTime.UtcNow.Ticks}";
+        Debug.Log("Http Test");
+        Debug.Log(url);
+
+        try
+        {
+            using UnityWebRequest req = UnityWebRequest.Get(url);
+            req.timeout = 30;
+            var res = await req.SendWebRequest();
+            
+            if (res.result == UnityWebRequest.Result.Success)
+            {
+                Debug.Log("myh Http Test 1.txt");
+                Debug.Log(res.downloadHandler.text);
+                return true;
+            }
+
+            Debug.LogError("下载失败: " + res.error);
+            return false;
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("下载失败: " + e.Message);
+            return false;
+        }
     }
     
     public static async UniTask<bool> BeginLoadAb()
@@ -69,7 +104,7 @@ public class UIManager
 
     public static async UniTask<bool> BeginLoadAbJson()
     {
-        var url = CdnConfig.Root + CdnConfig.ManifestName + ".json";
+        var url = $"{CdnConfig.Root}{CdnConfig.ManifestName}.json?{DateTime.UtcNow.Ticks}";
         Debug.Log(url);
         try
         {
@@ -134,30 +169,44 @@ public class UIManager
 
     private static async UniTask LoadAbRemote(List<string> bundles)
     {
-        UnityWebRequest request = null;
-        foreach (var bundle in bundles)
+        if (bundles == null || bundles.Count == 0)
         {
-            float startTime = Time.time;
-            request = UnityWebRequestAssetBundle.GetAssetBundle($"{CdnConfig.StreamingAssetsRoot}{bundle}");
-            var res = await request.SendWebRequest();
-            float cost = (Time.time - startTime) * 1000f;
-            if (res.result != UnityWebRequest.Result.Success)
-            {
-                Debug.LogError("/ERROR/" + request.error);
-                Debug.LogError($"{bundle}下载失败");
-            }
-            else
-            {
-                Debug.Log($"包名:{bundle}");
-                Debug.Log($"请求成功,耗时:{cost} ms");
-                AssetBundle ab = (res.downloadHandler as DownloadHandlerAssetBundle)?.assetBundle;
-                assetBundles.Add(bundle.Split('_')[0], ab);
-            }
+            return;
         }
 
-        request?.Dispose();
+        for (int i = 0; i < bundles.Count; i += RemoteAbMaxConcurrency)
+        {
+            int batchCount = Math.Min(RemoteAbMaxConcurrency, bundles.Count - i);
+            var tasks = new UniTask[batchCount];
+            for (int j = 0; j < batchCount; j++)
+            {
+                tasks[j] = LoadOneAbRemote(bundles[i + j]);
+            }
+
+            await UniTask.WhenAll(tasks);
+        }
+
         Debug.Log("延迟1s");
         await UniTask.Delay(1000);
+    }
+
+    private static async UniTask LoadOneAbRemote(string bundle)
+    {
+        float startTime = Time.time;
+        using UnityWebRequest request = UnityWebRequestAssetBundle.GetAssetBundle($"{CdnConfig.StreamingAssetsRoot}{bundle}");
+        var res = await request.SendWebRequest();
+        float cost = (Time.time - startTime) * 1000f;
+        if (res.result != UnityWebRequest.Result.Success)
+        {
+            Debug.LogError("/ERROR/" + request.error);
+            Debug.LogError($"{bundle}下载失败");
+            return;
+        }
+
+        Debug.Log($"包名:{bundle}");
+        Debug.Log($"请求成功,耗时:{cost} ms");
+        AssetBundle ab = (res.downloadHandler as DownloadHandlerAssetBundle)?.assetBundle;
+        assetBundles.Add(bundle.Split('_')[0], ab);
     }
 
     private static async UniTask LoadAbLocal(List<string> bundles)
@@ -334,7 +383,7 @@ public class UIManager
                 GameObject ui = Resources.Load<GameObject>(path);
         
                 ui = (GameObject)Object.Instantiate(ui, root);
-                var bv = ui.AddComponent<T>();
+                var bv = ui.GetComponent<T>();
                 viewDict.Add(uiName,bv);
                 bv.Show(args);
             }
@@ -369,7 +418,7 @@ public class UIManager
                 AssetBundle abs = (res.downloadHandler as DownloadHandlerAssetBundle).assetBundle;
                 GameObject ui = abs.LoadAsset<GameObject>(uiName);
                 ui = (GameObject)Object.Instantiate(ui, root);
-                T bv = ui.AddComponent<T>();
+                T bv = ui.GetComponent<T>();
                 viewDict.Add(uiName,bv);
                 assetBundles.Add("ui",abs);
                 bv.Show(args);

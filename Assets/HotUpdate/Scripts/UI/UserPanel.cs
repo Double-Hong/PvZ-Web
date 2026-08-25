@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 // using WeChatWASM;
 
-public class UserPanel : MonoBehaviour
+public class UserPanel : BaseView
 {
 
     public TextMeshProUGUI PlayerName;

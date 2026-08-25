@@ -19,8 +19,8 @@ MonoBehaviour:
     assetLoadType: 0
     compressDataPackage: 1
     VideoUrl: 
-    relativeDST: D:/_Unity Project/PvZ - Web/minigameExport/58
-    DST: D:/_Unity Project/PvZ - Web/minigameExport/58
+    relativeDST: D:/_Unity Project/PvZ - Web/minigameExport/63
+    DST: D:/_Unity Project/PvZ - Web/minigameExport/63
     StreamCDN: 
     bundleHashLength: 32
     bundlePathIdentifier: StreamingAssets;

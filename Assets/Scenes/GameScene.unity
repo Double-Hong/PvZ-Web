@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b6162dd586aa5b4abff21680e386ff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAb: 0
+  isAb: 1
   gameCanvas: {fileID: 1707295113}
   root: {fileID: 807825065}
   rootRect: {fileID: 1707295114}

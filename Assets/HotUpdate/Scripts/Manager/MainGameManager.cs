@@ -116,10 +116,11 @@ public class MainGameManager : MonoSingleton<MainGameManager>
         {
             await UIManager.Init(new UiPathProvider(), rootRect);
             // loadUi.gameObject.SetActive(false);
-            GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
-            Instantiate(prefab, GameCanvas.transform);
             ConfigManager.SetPathProvider(new ConfigPathProvider());
             EffectAudioManager.InitSingleton();
+            // GameObject prefab = Resources.Load<GameObject>("Prefabs/UI/UserPanel");
+            UIManager.ShowTest<UserPanel>("UserPanel");
+            // Instantiate(prefab, GameCanvas.transform);
         }
         catch (Exception e)
         {

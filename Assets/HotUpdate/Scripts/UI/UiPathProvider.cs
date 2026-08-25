@@ -8,7 +8,8 @@ public class UiPathProvider : IUiPathProvider
         { "GameOverUi", "Prefabs/UI/GameOverUi/GameOverUi2" },
         { "TestUi", "Prefabs/UI/Test/TestUi" },
         { "ShovelStateUi","Prefabs/UI/ShovelStateUi"},
-        { "CommonTipsUi","Prefabs/UI/CommonTipsUi/CommonTipsUi"}
+        { "CommonTipsUi","Prefabs/UI/CommonTipsUi/CommonTipsUi"},
+        { "UserPanel","Prefabs/UI/UserPanel"},
     };
 
     public string GetPath(string uiName)
