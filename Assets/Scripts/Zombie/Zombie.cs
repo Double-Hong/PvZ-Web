@@ -163,6 +163,8 @@ public class Zombie : MonoBehaviour
 
     public void DamageHealth(int damage, BulletType? bulletType, [CanBeNull] Action callBack)
     {
+        if (!IsAlive()) return;
+
         health -= damage;
         if (bulletType == BulletType.Snow)
         {
@@ -182,6 +184,9 @@ public class Zombie : MonoBehaviour
 
     public void BoomDie()
     {
+        if (!IsAlive()) return;
+
+        health = 0;
         speed = 0;
         mAnimator.SetTrigger("Boom");
         ZombieManager.GetInstance().ZombieDie(gameObject.transform);

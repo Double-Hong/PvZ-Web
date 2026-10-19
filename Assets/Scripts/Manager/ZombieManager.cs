@@ -167,8 +167,8 @@ public class ZombieManager : MonoBehaviour
         Random random = new Random();
         int row = random.Next(0, 5);
         Zombie zombie = Resources.Load<Zombie>("Prefabs/Zombie/Zombie");
-        zombie.SetRow(row);
         zombie = Instantiate(zombie, positions[row].localPosition, new Quaternion(), lines[row].transform);
+        zombie.SetRow(row);
         zombieNumber++;
         zombie.TurnToMove();
         _levelData.index++;
@@ -187,6 +187,27 @@ public class ZombieManager : MonoBehaviour
     {
         zombieNumber--;
         lastDieTransform = trans;
+    }
+
+    /// <summary>
+    /// 只查询指定行中的存活僵尸，不把死亡动画中的对象当作目标。
+    /// </summary>
+    public bool HasAliveZombieInRow(int row)
+    {
+        if (row < 0 || row >= lines.Length || lines[row] == null) return false;
+
+        Transform rowTransform = lines[row].transform;
+        for (int i = 0; i < rowTransform.childCount; i++)
+        {
+            Zombie zombie = rowTransform.GetChild(i).GetComponent<Zombie>();
+            if (zombie != null && zombie.isActiveAndEnabled &&
+                zombie.GetRow() == row && zombie.IsAlive())
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public AudioClip GetAudioClip(string path)
